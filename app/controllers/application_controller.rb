@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
     # session[:member_id] == 2
   end
   def owner?
-    signed_in? && @member ||= current_member
+    @member == current_member
   end
 
   def authorize

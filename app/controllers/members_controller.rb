@@ -1,5 +1,5 @@
 class MembersController < ApplicationController
-  before_filter :authorize, :except => [:index, :show]
+  before_filter :can_modify, :only => [:edit, :update, :destroy] 
   respond_to :html, :xml, :json 
   # GET /members
   # GET /members.xml
@@ -29,7 +29,6 @@ class MembersController < ApplicationController
 
   # GET /members/1/edit
   def edit
-    @member = current_member # Member.find(params[:id])
     @title = "Editing #{@member.name}'s details"
         
     
@@ -54,7 +53,6 @@ class MembersController < ApplicationController
   # PUT /members/1
   # PUT /members/1.xml
   def update
-    @member = current_member # Member.find(params[:id]) 
     
       if @member.update_attributes(params[:member])
         redirect_to(members_path, :notice => 'Member was successfully updated.')
@@ -66,10 +64,15 @@ class MembersController < ApplicationController
   # DELETE /members/1
   # DELETE /members/1.xml
   def destroy
-    @member = Member.find(params[:id])
     @member.destroy
 
     respond_with(@member) { redirect_to(members_url, :notice => 'Member was successfully deleted.') }
     
+  end
+  
+  protected
+  def can_modify
+    @member = Member.find(params[:id])
+    @member = current_member if !admin? 
   end
 end
