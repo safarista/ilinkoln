@@ -1,0 +1,26 @@
+<% @posts.each do |post| %>
+	<article class="article">
+
+		<h1><%= link_to "#{post.title}", post %></h1>
+		<h2>
+			 <%= post.created_at.strftime('%b %d, %Y') %> &bull; By:
+				<%= link_to "#{post.member.name}", member_path(post.member) %>
+				&bull; Category: 
+				<%= link_to "#{post.category.name}", categories_path(@category) %>
+				
+				
+				<%= link_to	raw("<span class=\"point\"></span>
+								<em> #{h post.comments.count} Comments</em>"), 
+								@post, :class => "speech-bubl", :title => "Read Comments" %>
+		</h2>
+		<%= kramdown truncate(post.body, :length => 1500, :omission =>'...(Read on)') %>
+		<p>
+		<% if admin? %>
+			<%= link_to 'New Post', new_post_path %> | 
+			<%= link_to 'Edit Post', edit_post_path(post) %> | 
+			<%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
+		<% end %>
+		</p>
+	</article>
+<% end %>
+

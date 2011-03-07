@@ -1,0 +1,39 @@
+<h1>All members</h1>
+<ul  id="members">
+<% @members.each do |member| %>
+	
+	<li>
+		
+		<span  class="float_rt member_info">
+			<span><strong>Name: </strong><%= member.name %></span>
+			<br>
+			<span><strong>Location: </strong><%= member.location %></span>
+			<br>
+			<span><strong>Title: </strong><%= member.title %></span>
+			<br>
+			<span><strong>Company: </strong><%= member.company %></span>
+			<br>
+			<span><strong>Website: </strong><%= member.website %></span>
+			<br>	
+			<span><strong>Description of what I do: </strong><%= simple_format member.description%></span>
+			<br>	
+			<span><strong>What they say about iLinkoln: </strong><%= simple_format member.aboutus %></span>
+		</span>
+		<figure  class="member_img float_lt">
+			<%= link_to (image_tag(member.avatar, :size => "140x140")), member %>
+			<figcaption> <%= link_to "@#{member.twitter}", "http://twitter.com/#{member.twitter}", :target => "_blank" %></figcaption>
+		</figure>
+		<div  class="clearfix">
+			<% if @owner %>
+			<%= link_to 'Edit', edit_member_path(member) %> | 
+			<% if admin? %>
+			<%= link_to 'Destroy', member, :confirm => 'Are you sure?', :method => :delete %>
+			<% end %>
+			<% else %>
+			
+			<% end %>
+		</div>
+	</li>
+<% end %>
+</ul>
+

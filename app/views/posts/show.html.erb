@@ -1,0 +1,99 @@
+<article class="article">	
+	<h1><%= @post.title %></h1>
+	<h2>
+		 <%= @post.created_at.strftime('%b %d, %Y') %> &bull; By:
+			<%= link_to "#{@post.member.name}", member_path(@post.member) %>
+			&bull; Category: 
+			<%= link_to "#{@post.category.name}", categories_path(@category) %>
+			<a href="#" title="Read comments" class="speech-bubl" >
+				<span class="point"></span>
+				<em> <%= @post.comments.count %> Comments</em>
+			</a>
+			
+	</h2>
+	<%= kramdown(@post.body) %>
+	
+	<% if admin? %>
+	<div class="controls">
+		<p>
+			<%= link_to 'Edit This Post', edit_post_path(@post) %> | 
+			<%= link_to 'Back', posts_path %> | 
+			<%= link_to 'Destroy', @post, :method => :delete, :confirm => "Are you sure?" %>
+		</p>
+	</div>
+	<% end %>
+</article>
+
+
+<h2 class="hr">Comments</h2>
+	<ul id="comment-list"  >
+		<% @post.comments.each do |comment| %>
+		<li>
+			<div class="comment">
+				<%= kramdown comment.body %>
+			<% if admin? %>
+			<p>
+			<%= link_to 'Destroy Comment', [comment.post, comment],
+				 		:confirm	=> 'Are you sure?',
+						:method		=> :delete %>
+			
+			</p>
+			<% end %>
+			
+			</div><!-- end .comment -->
+			
+			<div class="commentor">
+				<%= link_to "#{comment.commenter}", "#{comment.website}/", :target => "_blank" %>
+				<p><small><%= comment.created_at.to_date %></small></p>
+			</div>
+		</li>
+		<% end %>
+	
+	</ul><!-- end #comment-list -->
+	
+	<div id="comment-form">
+		<h2 class="hr">add a comment</h2>
+		<p>
+			I welcome your comments on this article. Please complete the form below to add to the conversation.
+		</p>
+		<p>
+			<strong>Note:</strong>
+			I reserve the right to edit or remove any comment that is deemed inappropriate, off-topic, or offensive.
+		</p>
+		
+		<%= form_for([@post, @post.comments.build]) do |f| %>
+			
+			<p>
+				<%= f.label      	:commenter, "Commenter" %> <br>
+				<% if signed_in? %>
+				<%= f.text_field 	:commenter, :value => current_member.name, :required => true %>
+				<% else %>
+				<%= f.text_field 	:commenter, :required =>true %>
+				<% end %>
+			</p>
+			<p>
+				<%= f.label      	:email, "Email" %> <br>
+				<% if signed_in? %>
+				<%= f.email_field 	:email, :value => current_member.contact, :required => true %>
+				<% else %>
+				<%= f.email_field	:email, :required =>true %>
+				<% end %>
+			</p>
+			<p>
+				<%= f.label     	:website, "Website" %> <br>
+				<% if signed_in? %>
+				<%= f.url_field 	:website, :value => current_member.website, :required => true %>
+				<% else %>
+				<%= f.url_field		:website, :required =>true %>
+				<% end %>
+			</p>
+			<p>
+				<%= f.label     	:body, "Body" %> <br>
+				<%= f.text_area 	:body, :required =>true %>
+			</p>
+			<p>
+				<%= f.submit %>
+			</p>
+		<% end %>
+	</div>
+	

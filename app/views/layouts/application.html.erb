@@ -1,0 +1,228 @@
+<!DOCTYPE html>  
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js" > <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+       Remove this if you use the .htaccess -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="apple-touch-fullscreen" content="yes" >
+	<meta name="apple-mobile-web-app-capable" content="yes" >
+	
+	<title><%= title %></title>
+	<meta name="description" content="">
+	<meta name="author" content="Nelson Kelem">
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+	<%= favicon_link_tag %>
+	<%= favicon_link_tag 'apple-touch-icon.png', :rel => 'apple-touch-icon', :type => 'image/png' %>
+	
+	
+	<!-- CSS : implied media="all" -->
+	<%= stylesheet_link_tag "ilinkoln", :media => "all"  %>
+	
+	<!-- Uncomment if you are specifically targeting less enabled mobile browsers -->
+	<%= stylesheet_link_tag "handheld", :media => "handheld" %>
+	<%= auto_discovery_link_tag :atom, posts_path(:atom) %>
+	<!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+	<%= javascript_include_tag "modernizr" %>
+	<%= csrf_meta_tag %>
+	
+</head>
+
+<body>
+
+  <div id="container">
+    <header>
+		<h1 id="logo"><%= link_to raw("<em>i</em>LINKOLN"), root_url %></h1>
+    </header>
+		<% flash.each do |name, msg| %>
+			<%= content_tag :div, msg, :id => "flash_#{name}" %>
+		<% end %>
+		
+	<div id="main">
+			
+		<%= yield %>
+	
+
+
+	</div><!-- end id main -->
+	<aside id="sidebar">
+		<dl id="new-events">
+			<dt>The Next Meetup or Event is on:</dt>
+				<dd style="font-size:2.7em; margin-top:1em; margin-bottom:1em;">
+					<%= link_to event, "/events", :style => "color:#127CC4;" %>
+				</dd>
+				<dd>At "The Hub" 1st floor inside The Engine Shed</dd>
+				<dd>
+					<a href="http://meetup.com/ilinkoln" title="Folow the link to our caledar" target="_blank">
+					Have a look at the Calendar for more &rarr;
+					</a>
+				</dd>
+
+		</dl>
+		
+		<div class="subscribe">
+			<h2>Navigation</h2>
+			<ul>
+				<li>
+					<%= link_to "Articles", posts_path, :title => "View all articles" %> | 
+				</li>
+				<li>
+					<%= link_to " Categories", categories_path, :title => "View all categories" %> | 
+				</li>
+				<li>
+					<%= link_to "Contact Us", "/contact_us", :title => "Contact us with any questions" %> | 
+				</li>
+				<li>
+					<%= link_to " Events", "/events", :title => "ilinkoln upcoming events" %>  
+				</li> 
+				</li>
+				<li>
+					<% if current_member %>
+						<span >| <%= link_to current_member.name, current_member, :style => "color:red" %> &rarr; <%= link_to "Sign Out", signout_path %></span>
+					
+					<% else %>
+						<%= link_to "", "/auth/twitter" %>
+					<% end %>
+				</li>
+			</ul>
+				
+		</div>
+		
+		
+		<div class="subscribe">
+			<h2>Join in you might like us</h2>
+			<ul>
+				<li>
+					<%= link_to image_tag("meetup.jpeg", :alt =>"Please Join us on Meetup"), "http://www.meetup.com/ilinkoln", :title=>"Please Join us on Meetup", :target=>"_blank" %>
+				</li>
+				<li>
+					<%= link_to image_tag("linkedin.png", :alt =>"Please Join us on linkedin"), "http://www.linkedin.com/ilinkoln", :title=>"Please Join us on linkedin", :target=>"_blank" %>
+				</li>
+				<li>
+					<%= link_to image_tag("facebook.png", :alt =>"Please Join us on facebook"), "http://www.facebook.com/ilinkoln", :title=>"Please Join us on facebook", :target=>"_blank" %>
+				</li>
+				<li>
+					<%= link_to image_tag("twitter.png", :alt =>"Please Join us on twitter"), "http://www.twitter.com/ilinkoln", :title=>"Please Join us on twitter", :target=>"_blank" %>
+				</li>
+			</ul>
+		</div>
+
+		<div class="about_us">
+			<h2>About</h2>
+			<p>iLinkoln Meetup Group is about sharing knowledge on entrepreneurship, tech, code, design, collaborations, how-to's, and making friends in our local community, started in August 2010 by Nelson <%= link_to "Read more...", "/about_us", :title => "read more about ilinkoln"  %>
+			</p>
+		</div>
+
+		<!-- <dl id="glowing-jobs">
+			<dt>Glowing-Imp Jobs</dt>
+				<dd>
+					<a href="#" title=""><strong>HTML,CSS,JS UX designer/developer</strong></a>
+					<br>
+					<em>Safarista Design</em>
+					<br>
+					<span class="location">Lincoln, UK</span>
+				</dd>
+				<dd>
+					<a href="#" title=""><strong>Senior Software Engineer - Ruby/Java - CNC</strong></a>
+					<br>
+					<em>LinkedIn</em>
+					<br>
+					<span class="location">Mountain View, California</span>
+				</dd>
+				<dd>
+					<a href="#" title=""><strong>Senior Ruby on Rails Software Engineer</strong></a>
+					<br>
+					<em>HealthCentral.com</em>
+					<br>
+					<span class="location">Arlington, Virginia</span>
+				</dd>
+				<dd>
+					<a href="#" title=""><strong>System Analyst/Programmer (Rails Developer) </strong></a>
+					<br>
+					<em>Cint USA</em>
+					<br>
+					<span class="location">Atlanta, Georgia</span>
+				</dd>
+
+		</dl> -->
+		
+		
+		<dl id="sponsors">
+			<dt>Sponsored</dt>
+				<dd>
+					<%= link_to image_tag("safarista.jpeg", :alt => "Safarista Design Lincoln"), "http://safarista.com/", :title => "Safarista web design and development  in lincoln", :target => "_blank"  %>
+				</dd>
+				<dd>
+					<%= link_to image_tag("uon.png", :alt => "University of Lincoln"), "http://lincoln.ac.uk/", :title => "The university of Lincoln", :target => "_blank"  %>
+				</dd>
+				<dd>
+					<%= link_to image_tag("ribanner.png", :alt => "RubyInside"), "http://rubyinside.com/", :title => "RubyInside a Ruby and Ruby on Rails expert", :target => "_blank"  %>
+				</dd>
+				<dd>
+					<%= link_to image_tag("zaddlem.png", :alt => "Zaddleman"), "http://zaddleinternetmarketing.com/", :title => "Zaddlemarketing Google Adwords expert", :target => "_blank"  %>
+				</dd>
+		</dl>
+
+		
+	</aside><!-- end sidebar -->
+
+	<footer>
+		<p>Copyright MMX–MMXI 
+			<%= link_to "Nelson Kelem", "http://nelsonkelem.ke/", :target => "_blank", :title => "A RoR and Web applications craftsman with a passion for opinionated software,  HTML5, CSS3, Javascript and Firefox" %>
+			|  
+			Hosted by: 
+
+			<%= link_to "Hophop Hosting", "http://hophophosting.com/", :target => "_blank", :title => "Safarista Design web hosting service based in Lincoln UK" %>
+		</p>
+	</footer>
+	</div> <!--! end of #container -->
+
+
+	<% # Javascript at the bottom for fast page loading %>
+
+	<% # Grab Google CDN's jQuery. fall back to local if necessary %>
+	<%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js' %>
+	<%= javascript_tag %{!window.jQuery && document.write(unescape('%3Cscript src="javascripts/jquery-1.5.1.js"%3E%3C/script%3E'))} %>
+
+
+	<% # scripts concatenated and minified via ant build script %>
+	<%= javascript_include_tag 'plugins.js' unless Rails.env.production? %>
+	<%= javascript_include_tag :defaults %>
+	<% # end concatenated and minified scripts %>
+
+
+	<!--[if lt IE 7 ]>
+	  <%= javascript_include_tag 'dd_belatedpng' -%>
+	  <%= javascript_tag %{DD_belatedPNG.fix('img, .png_bg')} %>
+	<![endif]-->
+
+	<% # yui profiler and profileviewer - remove for production %>
+	<% # end profiling code %>
+
+
+	<% # asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet %>
+	<% # change the UA-XXXXX-X to be your site's ID %>
+	<% if Rails.env.production? %>
+	<script>
+		var _gaq = [['_setAccount', 'UA-19064616-4'], ['_trackPageview']];
+		(function(d, t) {
+			var g = d.createElement(t),
+			s = d.getElementsByTagName(t)[0];
+			g.async = true;
+			g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			s.parentNode.insertBefore(g, s);
+		})(document, 'script');
+	</script>
+	<% end %>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<h2>To get in touch</h2>
+<p>If you are a member on the <%= link_to 'Meetup', "http://meetup.com/ilinkoln", :title => "ilinkoln meetup profile", :target => "_blank" %> website, just email straight from there. Its easier for us to keep you updated this way.</p>
+
+<p>Alternatively you can get in email 
+	<%= mail_to "studio@safarista.com", "Nelson Kelem",	:encode => "hex", 
+														:subject => "Enquiry from iLinkoln.org"  %> or 
+	<%= mail_to "peter@peterc.org", "Peter Cooper",	:encode => "hex", 
+													:subject => "Enquiry from iLinkoln.org"  %>
+</p>
+
+<p>
+	Follow us on <%= link_to 'twtter', "http://twitter.com/ilinkoln", :title => "ilinkoln on twitter", :target => "_blank"  %>, 
+	<%= link_to 'facebook', "http://facebook.com/ilinkoln", :title => "ilinkoln on facebook", :target => "_blank"  %>, 
+	<%= link_to 'linkedin', "http://linkedin.com/ilinkoln", :title => "ilinkoln on linked", :target => "_blank"  %>
+</p>

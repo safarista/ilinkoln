@@ -1,0 +1,12 @@
+<h1>all categories</h1>
+
+<dl>
+	<% @categories.each do |category| %>
+	
+		<dt><strong><%= link_to (category.name), category %></strong> &mdash; <%= category.posts.count %> Articles</dt>
+
+		<dd><%= kramdown (category.description ) %></dd>
+
+	<% end %>
+</dl>
+

@@ -1,0 +1,17 @@
+<h2>Upcoming Events</h2>
+
+<ul id="events" itemscope itemtype="http://data-vocabulary.org/Event">
+	<% @events.each do |event| %>
+	<li>
+		<h2 itemprop="name">Name: <%= event["name"]%></h2>
+		<strong>RSVPs: </strong><span><%= event["rsvpcount"]%></span><br>
+		<strong>Start: </strong><time itemprop="startDate" datetime="<%=  event["time"] %>"><%= event["time"]%></time><br>
+		<strong>End: </strong><time itemprop="summary" datetime=""> 22.00hrs</time><br>
+		<strong>Venue: </strong><span><%= event["venue_name"]%></span><br>
+		<strong>Location: </strong><span><%= event["venue_address2"]%>, <%= event["venue_city"]%></span><br>
+		<strong>Description: </strong><span><%= kramdown(event["description"])%></span>
+	</li>
+	<% end %>
+</ul>
+
+

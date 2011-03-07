@@ -1,0 +1,28 @@
+<ul  id="members">
+	<li itemscope itemtype="http://data-vocabulary.org/person">
+
+		<span  class="float_rt member_info">
+			<strong>Name: </strong><span itemprop="name"><%= @member.name %></span>
+			<br>
+			<strong>Title: </strong><span itemprop="title"><%= @member.title %></span>
+			<br>
+			<strong>Location: </strong><span itemprop="address"><%= @member.location %></span>
+			<br>
+			<strong>Company: </strong><span itemprop="affiliation"><%= @member.company %></span>
+			<br>
+			<strong>Website: </strong><span itemprop="url"><%= @member.website %></span>
+			<br>	
+			<strong>Description of what I do: </strong><span itemprop="description"><%= simple_format @member.description%></span>
+			<br>	
+			<span><strong>What they say about iLinkoln: </strong><%= simple_format @member.aboutus %></span>
+		</span>
+		<figure  class="member_img">
+			<%= image_tag @member.avatar, :size => "140x140", :itemprop =>"photo" %>
+			<figcaption> <%= link_to "@#{@member.twitter}", "http://twitter.com/#{@member.twitter}", :target => "_blank" %></figcaption>
+		</figure>
+		<div  class="clearfix">
+			<%= link_to 'Edit', edit_member_path(@member) if admin? or owner? %>
+		</div>
+	</li>
+</ul>
+
