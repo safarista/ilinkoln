@@ -4,10 +4,13 @@ gem 'rails', '3.0.4'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'sqlite3'
 
-# Use unicorn as the web server
-gem 'unicorn'
+group :development, :test do
+	gem 'sqlite3'
+	# Use unicorn as the web server
+	gem 'unicorn'
+end
+
 gem 'json_pure'
 
 # Deploy with Capistrano
