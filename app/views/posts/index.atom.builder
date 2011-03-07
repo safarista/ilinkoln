@@ -10,7 +10,7 @@ atom_feed do |feed|
                           :omission => '...(Read on)') }", 
                           :type => "html")
                       
-      entry.author { |author| author.name(post.member.name)}
+      entry.author("Nelson Kelem")
       
     end
   end
