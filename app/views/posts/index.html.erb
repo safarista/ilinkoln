@@ -3,8 +3,7 @@
 
 		<h1><%= link_to "#{post.title}", post %></h1>
 		<h2>
-			 <%= post.created_at.strftime('%b %d, %Y') %> &bull; By:
-				<%= link_to "#{ post.member.name }", member_path(post.member) %>
+			 <%= post.created_at.strftime('%b %d, %Y') %> &bull; By: Nelson Kelem
 				&bull; Category: 
 				<%= link_to "#{post.category.name}", categories_path(@category) %>
 				
