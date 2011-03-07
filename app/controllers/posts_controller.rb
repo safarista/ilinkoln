@@ -46,7 +46,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.xml
   def create
-    @post = Post.create!(params[:post]).merge(:member_id => current_member.id )
+    @post = Post.create! params[:post].merge(:member_id => current_member.id )
 
     respond_to do |format|
       if @post.save
