@@ -8,6 +8,7 @@ gem 'sqlite3'
 
 # Use unicorn as the web server
 gem 'unicorn'
+gem 'json_pure'
 
 # Deploy with Capistrano
 # gem 'capistrano'
