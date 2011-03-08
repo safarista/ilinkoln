@@ -4,12 +4,13 @@
 	<% @events.each do |event| %>
 	<li itemscope itemtype="http://data-vocabulary.org/Event">
 		<h2 itemprop="summary"><%= event["name"]%></h2>
+		<strong>Event Link: </strong><a href="http://www.meetup.com/ilinkoln/" itemprop="url" target="_blank">iLinkoln group on Meetup.com </a><br>
 		<strong>RSVPs: </strong><span><%= event["rsvpcount"]%></span><br>
 		<strong>Start: </strong><time itemprop="dtstart" datetime="<%=  event["time"] %>"><%= event["time"]%></time><br>
 		<strong>End: </strong><time itemprop="dtend" datetime=""> 22.00hrs</time><br>
 		<strong>Venue: </strong><span><%= event["venue_name"]%></span><br>
 		<strong>Location: </strong><span itemprop="address" itemscope itemtype="http://data-vocabulary/Address">
-										<span itemprop="street-address"><%= event["venue_address3"]%>,</span> 
+										<span itemprop="street-address"><%= event["venue_address1"]%>,</span> 
 										<span itemprop="locality"><%= event["venue_city"]%>,</span>
 										<span itemprop="region">Lincolnshire,</span>
 										<span itemprop="postal-code"><%= event["venue_address2"]%>,</span>
