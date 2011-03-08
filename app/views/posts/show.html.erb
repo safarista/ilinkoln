@@ -2,9 +2,9 @@
 	<h1><%= @post.title %></h1>
 	<h2>
 		 <%= @post.created_at.strftime('%b %d, %Y') %> &bull; By:
-			<%= link_to "#{@post.member.name}", member_path(@post.member) %>
+			<%= link_to "#{@post.member.name}", member_path(@post.member), :title => "view member profile" %>
 			&bull; Category: 
-			<%= link_to "#{@post.category.name}", categories_path(@category) %>
+			<%= link_to "#{@post.category.name}", categories_path(@category), :title => "view all articles in this category" %>
 			<a href="#" title="Read comments" class="speech-bubl" >
 				<span class="point"></span>
 				<em> <%= @post.comments.count %> Comments</em>

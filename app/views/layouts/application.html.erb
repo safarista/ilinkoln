@@ -92,10 +92,9 @@
 				</li>
 				<li>
 					<% if current_member %>
-						<span >| <%= link_to current_member.name, current_member, :style => "color:red" %> &rarr; <%= link_to "Sign Out", signout_path %></span>
-					
+					<span >| <%= link_to current_member.name, current_member, :style => "color:red" %> &rarr; <%= link_to "Sign Out", signout_path %></span>
 					<% else %>
-						<%= link_to "", "/auth/twitter" %>
+					<%= link_to "Signin with twitter", "/auth/twitter", :title => "Sign in through twitter" %>
 					<% end %>
 				</li>
 			</ul>
