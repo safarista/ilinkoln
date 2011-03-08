@@ -11,7 +11,7 @@ module ApplicationHelper
   end
   
   def kramdown(text)
-    return sanitize Kramdown::Document.new(text).to_html, :tags => ['a', 'strong', 'p', 'embed', 'object', 'param', 'div', 'span', 'ul', 'li', 'ol', 'img', 'figure', 'figcaption']
+    return sanitize Kramdown::Document.new(text).to_html # , :tags => ['a', 'strong', 'p', 'embed', 'object', 'param', 'div', 'span', 'ul', 'li', 'ol', 'img', 'figure', 'figcaption']
   end
   
   def event
