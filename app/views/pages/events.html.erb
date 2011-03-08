@@ -4,6 +4,7 @@
 	<% @events.each do |event| %>
 	<li itemscope itemtype="http://data-vocabulary.org/Event">
 		<h2 itemprop="summary"><%= event["name"]%></h2>
+		<p>This is  atejhsdgrfhjkdrfgjkhdrf</p>
 		<strong>Event Link: </strong><a href="http://www.meetup.com/ilinkoln/" itemprop="url" target="_blank">iLinkoln group on Meetup.com </a><br>
 		<strong>RSVPs: </strong><span><%= event["rsvpcount"]%></span><br>
 		<strong>Start: </strong><time itemprop="dtstart" datetime="<%=  event["time"] %>"><%= event["time"]%></time><br>
