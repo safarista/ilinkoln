@@ -1,7 +1,7 @@
 <% @posts.each do |post| %>
 	<article class="article">
 
-		<h1><%= link_to "#{post.title}", post %></h1>
+		<h1><%= link_to "#{post.title}", post, :title => "#{post.title}" %></h1>
 		<h2>
 			 <%= post.created_at.strftime('%b %d, %Y') %> &bull; By: Nelson Kelem
 				&bull; Category: 
@@ -12,7 +12,7 @@
 								<em> #{h post.comments.count} Comments</em>"), 
 								@post, :class => "speech-bubl", :title => "Read Comments" %>
 		</h2>
-		<%= kramdown truncate(post.body, :length => 1500, :omission =>'...(Read on)') %>
+		<%= kramdown truncate(post.body, :length => 500, :omission =>'...(Read on)') %>
 		<p>
 		<% if admin? %>
 			<%= link_to 'New Post', new_post_path %> | 
