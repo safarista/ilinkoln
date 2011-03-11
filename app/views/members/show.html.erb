@@ -8,17 +8,17 @@
 			<br>
 			<strong>Location: </strong><span itemprop="address"><%= @member.location %></span>
 			<br>
-			<strong>Company: </strong><span itemprop="affiliation"><%= @member.company %></span>
+			<strong>Company: </strong><span itemprop="org"><%= @member.company %></span>
 			<br>
-			<strong>Website: </strong><span itemprop="url"><%= @member.website %></span>
+			<strong>Website: </strong><span><%= link_to @member.website, "#{@member.website}",  :itemprop =>"url", :title => "My website", :target => "_blank" %></span>
 			<br>	
-			<strong>Description of what I do: </strong><span itemprop="description"><%= simple_format @member.description%></span>
+			<strong>Description of what I do: </strong><span itemprop="role"><%= simple_format @member.description%></span>
 			<br>	
 			<span><strong>What they say about iLinkoln: </strong><%= simple_format @member.aboutus %></span>
 		</span>
 		<figure  class="member_img">
 			<%= image_tag @member.avatar, :size => "140x140", :itemprop =>"photo" %>
-			<figcaption> <%= link_to "@#{@member.twitter}", "http://twitter.com/#{@member.twitter}", :target => "_blank" %></figcaption>
+			<figcaption> <%= link_to "@#{@member.twitter}", "http://twitter.com/#{@member.twitter}", :title => "twitter profile", :target => "_blank", :itemprop => "url" %></figcaption>
 		</figure>
 		<div  class="clearfix">
 			<%= link_to 'Edit', edit_member_path(@member) if admin? or owner? %>
