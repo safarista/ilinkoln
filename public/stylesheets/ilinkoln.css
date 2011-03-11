@@ -471,12 +471,13 @@ aside #glowing-jobs dd {
 }
 
 /* aside#new-events dd:first-child { font-size: 5em; color: #0A90D6;} */
-
 footer{
 	text-align: center;
 	width: 100%;
 	clear: both;
+	margin-top:10px;
 }
+footer p{text-align: center;}
 
 #comment-list {
 	display: inline-block;

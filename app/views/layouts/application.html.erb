@@ -74,22 +74,16 @@
 		<div class="subscribe">
 			<h2>Navigation</h2>
 			<ul>
-				<li>
-					<%= link_to "Articles", posts_path, :title => "View all articles" %> | 
-				</li>
-				<li>
-					<%= link_to " Categories", categories_path, :title => "View all categories" %> | 
-				</li>
-				<li>
-				<li>
-					<%= link_to " Members", members_path, :title => "View our members" %> | 
-				</li>
-					<%= link_to "Contact Us", "/contact_us", :title => "Contact us with any questions" %> | 
-				</li>
-				<li>
-					<%= link_to " Events", "/events", :title => "ilinkoln upcoming events" %>  
-				</li> 
-				</li>
+				<li><%= link_to "Articles", posts_path, :title => "View all articles" %> | </li>
+				
+				<li><%= link_to " Categories", categories_path, :title => "View all categories" %> | </li>
+				
+				<li><%= link_to " Members", members_path, :title => "View our members" %> | </li>
+				
+				<li><%= link_to "Contact Us", "/contact_us", :title => "Contact us with any questions" %> | </li>
+				
+				<li><%= link_to " Events", "/events", :title => "ilinkoln upcoming events" %>  </li>
+				 
 				<li>
 					<% if current_member %>
 					<span >| <%= link_to current_member.name, current_member, :style => "color:red" %> &rarr; <%= link_to "Sign Out", signout_path %></span>
@@ -100,7 +94,6 @@
 			</ul>
 				
 		</div>
-		
 		
 		<div class="subscribe">
 			<h2>Join in you might like us</h2>
@@ -181,11 +174,18 @@
 
 	<footer>
 		<p>Copyright MMX–MMXI 
-			<%= link_to "Nelson Kelem", "http://nelsonkelem.ke/", :target => "_blank", :title => "A RoR and Web applications craftsman with a passion for opinionated software,  HTML5, CSS3, Javascript and Firefox" %>
-			|  
-			Hosted by: 
-
+			iLinkoln 
+			| 
+			Hosting by: 
 			<%= link_to "Hophop Hosting", "http://hophophosting.com/", :target => "_blank", :title => "Safarista Design web hosting service based in Lincoln UK" %>
+		</p>
+		<p>Website design and development by 
+			<%= link_to "Safarista Design", "http://safarista.com/", :target => "_blank", :title => "Safarista design website" %> using 
+			<%= link_to "Ruby on Rails", "http://rubyonrails.org/", :target => "_blank", :title => "Ruby on rails website" %> and</p>
+		<p>
+		<a href="http://www.w3.org/html/logo/">
+		<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-multimedia-semantics.png" width="197" height="64" alt="HTML5 Powered with CSS3 / Styling, Multimedia, and Semantics" title="HTML5 Powered with CSS3 / Styling, Multimedia, and Semantics">
+		</a>
 		</p>
 	</footer>
 	</div> <!--! end of #container -->
