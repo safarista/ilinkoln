@@ -2,25 +2,25 @@
 <ul  id="members">
 <% @members.each do |member| %>
 	
-	<li>
+	<li itemscope itemtype="http://data-vocabulary.org/Person">
 		
-		<span  class="float_rt member_info">
-			<span><strong>Name: </strong><%= member.name %></span>
+		<div  class="float_rt member_info">
+			<strong>Name: </strong><span itemprop="name"><%= member.name %></span>
 			<br>
-			<span><strong>Location: </strong><%= member.location %></span>
+			<strong>Location: </strong><span itemprop="adr"><%= member.location %></span>
 			<br>
-			<span><strong>Title: </strong><%= member.title %></span>
+			<strong>Title: </strong><span itemprop="title"><%= member.title %></span>
 			<br>
-			<span><strong>Company: </strong><%= member.company %></span>
+			<strong>Company: </strong><span itemprop="org"><%= member.company %></span>
 			<br>
-			<span><strong>Website: </strong><%= member.website %></span>
+			<strong>Website: </strong><span itemprop="url"><%= member.website %></span>
 			<br>	
-			<span><strong>Description of what I do: </strong><%= simple_format member.description%></span>
+			<strong>Description of what I do: </strong><span itemprop="description"><%= kramdown truncate(member.description, :length => 500, :omission => "[...]")%></span>
 			<br>	
-			<span><strong>What they say about iLinkoln: </strong><%= simple_format member.aboutus %></span>
-		</span>
+			<div><strong>What I think about iLinkoln: </strong><%= kramdown member.aboutus %></div>
+		</div>
 		<figure  class="member_img float_lt">
-			<%= link_to (image_tag(member.avatar, :size => "140x140")), member %>
+			<%= link_to (image_tag(member.avatar, :size => "140x140")), member,  :itemprop =>"photo" %>
 			<figcaption> <%= link_to "@#{member.twitter}", "http://twitter.com/#{member.twitter}", :target => "_blank" %></figcaption>
 		</figure>
 		<div  class="clearfix">

@@ -1,7 +1,7 @@
 <ul  id="members">
 	<li itemscope itemtype="http://data-vocabulary.org/person">
 
-		<span  class="float_rt member_info">
+		<div  class="float_rt member_info">
 			<strong>Name: </strong><span itemprop="name"><%= @member.name %></span>
 			<br>
 			<strong>Title: </strong><span itemprop="title"><%= @member.title %></span>
@@ -14,8 +14,8 @@
 			<br>	
 			<strong>Description of what I do: </strong><span itemprop="role"><%= simple_format @member.description%></span>
 			<br>	
-			<span><strong>What they say about iLinkoln: </strong><%= simple_format @member.aboutus %></span>
-		</span>
+			<div><strong>What I think about iLinkoln: </strong><%= simple_format @member.aboutus %></div>
+		</div>
 		<figure  class="member_img">
 			<%= image_tag @member.avatar, :size => "140x140", :itemprop =>"photo" %>
 			<figcaption> <%= link_to "@#{@member.twitter}", "http://twitter.com/#{@member.twitter}", :title => "twitter profile", :target => "_blank", :itemprop => "url" %></figcaption>

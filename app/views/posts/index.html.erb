@@ -12,7 +12,7 @@
 								<em> #{h post.comments.count} Comments</em>"), 
 								@post, :class => "speech-bubl", :title => "Read Comments" %>
 		</h2>
-		<%= kramdown truncate(post.body, :length => 500, :omission =>'...(Read on)') %>
+		<%= kramdown truncate(post.body, :length => 500, :omission =>'[...]') %>
 		<p>
 		<% if admin? %>
 			<%= link_to 'New Post', new_post_path %> | 
