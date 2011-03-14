@@ -12,7 +12,7 @@
 			<br>
 			<strong>Website: </strong><span><%= link_to @member.website, "#{@member.website}",  :itemprop =>"url", :title => "My website", :target => "_blank" %></span>
 			<br>	
-			<strong>Description of what I do: </strong><span itemprop="role"><%= simple_format @member.description%></span>
+			<strong>What I do: </strong><div itemprop="role"><%= kramdown @member.description%></div>
 			<br>	
 			<div><strong>What I think about iLinkoln: </strong><%= simple_format @member.aboutus %></div>
 		</div>

@@ -15,7 +15,7 @@
 			<br>
 			<strong>Website: </strong><span itemprop="url"><%= member.website %></span>
 			<br>	
-			<strong>Description of what I do: </strong><span itemprop="description"><%= kramdown truncate(member.description, :length => 500, :omission => "[...]")%></span>
+			<strong>What I do: </strong><div itemprop="description"><%= kramdown truncate(member.description, :length => 500, :omission => "[...]")%></div>
 			<br>	
 			<div><strong>What I think about iLinkoln: </strong><%= kramdown member.aboutus %></div>
 		</div>
