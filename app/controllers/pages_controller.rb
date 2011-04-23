@@ -10,10 +10,10 @@ class PagesController < ApplicationController
   end
   
   def events
-    url = "https://api.meetup.com/events?key=60451a4524d6d1b1f3af3551b4111&sign=true&status=upcoming&group_urlname=ilinkoln"
-    events = JSON.load(open(url).read)
-    @events = events["results"]
-    @title = @events.first["name"]
+    # url = "https://api.meetup.com/events?key=60451a4524d6d1b1f3af3551b4111&sign=true&status=upcoming&group_urlname=ilinkoln"
+    # events = JSON.load(open(url).read)
+    # @events = events["results"]
+    # @title = @events.first["name"]
     
     # 
     # "rsvpcount" => "1",
