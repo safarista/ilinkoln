@@ -14,12 +14,12 @@ module ApplicationHelper
     return sanitize Kramdown::Document.new(text).to_html, :tags => ['a', 'strong', 'p', 'embed', 'object', 'param', 'div', 'span', 'ul', 'li', 'ol', 'img', 'figure', 'figcaption', 'cite', 'pre', 'blockquote', 'video', 'audio', 'mark', 'em', 'sup', 'sub', 'small', 'h2', 'h3', 'h4', 'strong']
   end
   
-  # def event
-  #   url = "https://api.meetup.com/events?key=60451a4524d6d1b1f3af3551b4111&sign=true&status=upcoming&group_urlname=ilinkoln"
-  #   events = JSON.load(open(url).read)
-  #   @events = events["results"]
-  #   @events.first["time"].to_date()
-  #   
-  # end
+  def event
+    url = "https://api.meetup.com/events?key=60451a4524d6d1b1f3af3551b4111&sign=true&status=upcoming&group_urlname=ilinkoln"
+    events = JSON.load(open(url).read)
+    @events = events["results"]
+    @events.first["time"].to_date()
+    
+  end
   
 end
