@@ -1,12 +1,21 @@
 class PagesController < ApplicationController
   # caches_page :events
   
+  
   def about_us
     @title = "What iLinkoln is all about"
   end
   
   def contact_us
     
+  end
+  
+  def lincoln_hack
+    @title = 'Lincoln Hack Fest 18-19th June 2011 at the Lincoln University'
+    @meta = 'Lincoln Open Hack is a 24 hours event on 18 to 19/06/2011. Desigers, developers, and other geeks come together and create great applications. The venue is Lincoln University Main building contact Nelson Kelem 07807480332'
+    respond_to do |format|
+      format.html { render :layout => false }
+    end
   end
   
   def events

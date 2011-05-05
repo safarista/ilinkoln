@@ -1,0 +1,323 @@
+<!DOCTYPE html>  
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js" > <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<link href='http://fonts.googleapis.com/css?family=Arvo:regular,bold' rel='stylesheet' type='text/css'>
+	<meta name="google-site-verification" content="s4ni6ZHAqjS1SRAdFZgZMgBrEuv9qBouib8yhLFXAAM" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="apple-touch-fullscreen" content="yes" >
+	<meta name="apple-mobile-web-app-capable" content="yes" >
+	<title><%= title %></title>
+	<meta name="description" content="<%= meta_description %>">
+	<meta name="author" content="Nelson Kelem">
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+	<%= favicon_link_tag %>
+	<%= favicon_link_tag 'apple-touch-icon.png', :rel => 'apple-touch-icon', :type => 'image/png' %>
+	
+	
+	<!-- CSS : implied media="all" 
+	<%= stylesheet_link_tag "lincoln_hack", :media => "screen" %>-->
+	<style>
+		#lincshack{background-color:#fff/*160a00*/;font-family:helvetica, arial, serif;color:#000;font-size:18px;}
+		#container{margin:40px auto;width:960px;}
+		#logo, .fancyfont, h2, h3,dt{font-family: 'Arvo', arial, serif;}
+		#logo{font-size:80px;color:#e34c25;}
+		.fancyfont{font-size:40px;}
+		li{list-style-type:square;}
+		nav{font-size:26px;font-weight:bold;padding:20px;margin:15px 0;background-color:#e34c25;-webkit-border-top-right-radius:4em;/*-webkit-border-bottom-right-radius:2em;*/}
+		nav li{list-style-type:none;display:inline; }
+		.col1{width:470px;}
+		.active{color:#fff/*160a00*/;}
+		a{color:#000;text-decoration:none;}
+		.float_rt{float:right;}
+		#map_canvas{height:100%;}
+	</style>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;key=ABQIAAAAXQa8lsEoleTl2c37BIA_ERQPSbhHvN0x4TnvYWevUSKQ8M94TBRFH-sE0UbGyYLmNp7h4LC48yhoEw"></script>
+	<script>
+	  function initialize() {
+	    var myLatlng = new google.maps.LatLng(53.22845,-0.5476);
+	    var myOptions = {
+	      zoom: 4,
+	      center: myLatlng,
+	      mapTypeId: google.maps.MapTypeId.SATELLITE
+	    }
+	    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+	    var marker = new google.maps.Marker({
+	        position: myLatlng, 
+	        map: map,
+	        title:"University of Lincoln Admin Building"
+	    });   // API Key ABQIAAAAXQa8lsEoleTl2c37BIA_ERQPSbhHvN0x4TnvYWevUSKQ8M94TBRFH-sE0UbGyYLmNp7h4LC48yhoEw
+	  }
+	</script>
+	
+	<!-- Uncomment if you are specifically targeting less enabled mobile browsers -->
+	<%= stylesheet_link_tag "handheld", :media => "mobile" %>
+	<%= auto_discovery_link_tag :atom, posts_path(:atom) %>
+	<!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+	<%= javascript_include_tag "modernizr" %>
+	<%= csrf_meta_tag %>
+	
+</head>
+<body  id="lincshack">
+
+	<div onload="initialize()" id="container">
+		<header>
+			<h1 id="logo">Lincoln Hack</h1>
+			<h2>18-19 June 2011, Lincoln <%= link_to "Register Now", "//www.meetup.com/ilinkoln", :title => "Register now for free", :class => "float_rt fancyfont" %></h2>
+		</header>
+		
+		
+		<section id="about"  class="about">
+			<nav role="main">
+				<ul>
+				<li><a href="#about"  class="active">About</a></li>
+				<li><a href="#schedule">Schedule</a></li>
+				<li><a href="#venue">Venue</a></li>
+				<li><a href="#challeges">Challenges</a></li>
+				<li><a href="#sponsors">Sponsors</a></li>
+				<li><a href="#rules">Rules</a></li>
+				<li><a href="#prizes">Prizes</a></li>
+				<li><a href="#contacts">Contacts</a></li>
+				</ul>
+			</nav>
+			<div>
+				<div  class="col1">
+					<h2>Lincoln Open Hack</h2>
+					<p>The hack event will be a first of its kind to take place in Lincoln.</p> 
+					<p>A hack day is an event where developers, designers and people with ideas gather to build <mark>'cool stuff'</mark> - the events now run all over the world and are organised by <em>Yahoo!</em> as well as other organisations such as the <em>BBC</em>, <em>Lonely Planet</em> and even government departments across the world.</p> 
+					<p>It will take place on the Lincoln University grounds in the atrium of the main admin building.</p>
+				</div>
+				<div id="map_canvas">
+					
+				</div>
+			</div>
+		</section><!-- end #main -->
+		
+		
+		<section id="schedule"  class="about">
+			<nav>
+				<ul>
+				<li><a href="#about">About</a></li>
+				<li><a href="#schedule" class="active">Schedule</a></li>
+				<li><a href="#venue">Venue</a></li>
+				<li><a href="#challeges">Challenges</a></li>
+				<li><a href="#sponsors">Sponsors</a></li>
+				<li><a href="#rules">Rules</a></li>
+				<li><a href="#prizes">Prizes</a></li>
+				<li><a href="#contacts">Contacts</a></li>
+				</ul>
+			</nav>
+			<div>
+				<div>
+					<h2>Lincoln Open Hack</h2>
+					<p>The hack event will be a first of its kind to take place in Lincoln.</p> 
+					<p>A hack day is an event where developers, designers and people with ideas gather to build <mark>'cool stuff'</mark> - the events now run all over the world and are organised by <em>Yahoo!</em> as well as other organisations such as the <em>BBC</em>, <em>Lonely Planet</em> and even government departments across the world.</p> 
+					<p>It will take place on the Lincoln University grounds in the atrium of the main admin building.</p>
+				</div>
+				<div id="twitter_feed">
+					
+				</div>
+			</div>
+		</section><!-- end #main -->
+		
+		<section id="venue"  class="about">
+			<nav>
+				<ul>
+				<li><a href="#about">About</a></li>
+				<li><a href="#schedule">Schedule</a></li>
+				<li><a href="#venue" class="active">Venue</a></li>
+				<li><a href="#challeges">Challenges</a></li>
+				<li><a href="#sponsors">Sponsors</a></li>
+				<li><a href="#rules">Rules</a></li>
+				<li><a href="#prizes">Prizes</a></li>
+				<li><a href="#contacts">Contacts</a></li>
+				</ul>
+			</nav>
+			<div>
+				<div  class="col1">
+					<h2>Venue details</h2>
+					<p>The hack event will be a first of its kind to take place in Lincoln.</p> 
+					<p>A hack day is an event where developers, designers and people with ideas gather to build <mark>'cool stuff'</mark> - the events now run all over the world and are organised by <em>Yahoo!</em> as well as other organisations such as the <em>BBC</em>, <em>Lonely Planet</em> and even government departments across the world.</p> 
+					<p>It will take place on the Lincoln University grounds in the atrium of the main admin building.</p>
+				</div>
+				<div></div>
+			</div>
+		</section><!-- end #main -->
+		
+		<section id="challenges"  class="about">
+			<nav>
+				<ul>
+				<li><a href="#about">About</a></li>
+				<li><a href="#schedule">Schedule</a></li>
+				<li><a href="#venue">Venue</a></li>
+				<li><a href="#challeges" class="active">Challenges</a></li>
+				<li><a href="#sponsors">Sponsors</a></li>
+				<li><a href="#rules">Rules</a></li>
+				<li><a href="#prizes">Prizes</a></li>
+				<li><a href="#contacts">Contacts</a></li>
+				</ul>
+			</nav>
+			<div>
+				<div>
+					<h2>Lincoln Open Hack</h2>
+					<p>The hack event will be a first of its kind to take place in Lincoln.</p> 
+					<p>A hack day is an event where developers, designers and people with ideas gather to build <mark>'cool stuff'</mark> - the events now run all over the world and are organised by <em>Yahoo!</em> as well as other organisations such as the <em>BBC</em>, <em>Lonely Planet</em> and even government departments across the world.</p> 
+					<p>It will take place on the Lincoln University grounds in the atrium of the main admin building.</p>
+				</div>
+				<div id="twitter_feed">
+					
+				</div>
+			</div>
+		</section><!-- end #challenges -->
+		
+		<section id="sponsors"  class="about">
+			<nav>
+				<ul>
+				<li><a href="#about">About</a></li>
+				<li><a href="#schedule">Schedule</a></li>
+				<li><a href="#venue">Venue</a></li>
+				<li><a href="#challeges">Challenges</a></li>
+				<li><a href="#sponsors" class="active">Sponsors</a></li>
+				<li><a href="#rules">Rules</a></li>
+				<li><a href="#prizes">Prizes</a></li>
+				<li><a href="#contacts">Contacts</a></li>
+				</ul>
+			</nav>
+			<div>
+				<div>
+					<h2>Lincoln Open Hack</h2>
+					<p>The hack event will be a first of its kind to take place in Lincoln.</p> 
+					<p>A hack day is an event where developers, designers and people with ideas gather to build <mark>'cool stuff'</mark> - the events now run all over the world and are organised by <em>Yahoo!</em> as well as other organisations such as the <em>BBC</em>, <em>Lonely Planet</em> and even government departments across the world.</p> 
+					<p>It will take place on the Lincoln University grounds in the atrium of the main admin building.</p>
+				</div>
+				<div id="twitter_feed">
+					
+				</div>
+			</div>
+		</section><!-- end #sponsors -->
+		
+		<section id="rules"  class="about">
+			<nav>
+				<ul>
+				<li><a href="#about">About</a></li>
+				<li><a href="#schedule">Schedule</a></li>
+				<li><a href="#venue">Venue</a></li>
+				<li><a href="#challeges">Challenges</a></li>
+				<li><a href="#sponsors">Sponsors</a></li>
+				<li><a href="#rules" class="active">Rules</a></li>
+				<li><a href="#prizes">Prizes</a></li>
+				<li><a href="#contacts">Contacts</a></li>
+				</ul>
+			</nav>
+			<div>
+				<div>
+					<h2>There are simple rules</h2>
+					<ul>
+					<li>Teams of 4 or less</li>
+					<li>Entry to the hack day is at your own risk, Lincoln Hack, iLinkoln.org or any of the organisers shall not be held responsible if you break a leg or something.</li>
+					<li>The Hack must not be worked on BEFORE midday on saturday (this does not include naming or coming up with the idea)</li>
+					<li>No hardware hacks without pre authorised permission <mark>(NO SOLDERING IRONS)</mark></li>
+					<li>Hack registration begins at 9am on sunday morning and ends at 10:30am on Sunday.</li>
+					<li>Bring your own beanbag..</li>
+					<li>F1 will not be ‘put on the projector’ don’t ask…</li>
+					<li>Judges decisions are final</li>
+					<li>We have a lovely space for the Hack Day, if you start to act in a manner in which you might damage it, you may be asked to leave (and when we say may… we mean that security can be pretty convincing).</li>
+					<li>These rules can (and probably will) be amended at any time</li>
+					</ul>
+				</div>
+				<div id="twitter_feed">
+					
+				</div>
+			</div>
+		</section><!-- end #rules -->
+		
+		<section id="prizes"  class="about">
+			<nav>
+				<ul>
+				<li><a href="#about">About</a></li>
+				<li><a href="#schedule">Schedule</a></li>
+				<li><a href="#venue">Venue</a></li>
+				<li><a href="#challeges">Challenges</a></li>
+				<li><a href="#sponsors">Sponsors</a></li>
+				<li><a href="#rules">Rules</a></li>
+				<li><a href="#prizes" class="active">Prizes</a></li>
+				<li><a href="#contacts">Contacts</a></li>
+				</ul>
+			</nav>
+			<div>
+				<div>
+					<h2>Lincoln Open Hack</h2>
+					<p>The hack event will be a first of its kind to take place in Lincoln.</p> 
+					<p>A hack day is an event where developers, designers and people with ideas gather to build <mark>'cool stuff'</mark> - the events now run all over the world and are organised by <em>Yahoo!</em> as well as other organisations such as the <em>BBC</em>, <em>Lonely Planet</em> and even government departments across the world.</p> 
+					<p>It will take place on the Lincoln University grounds in the atrium of the main admin building.</p>
+				</div>
+				<div id="twitter_feed">
+					
+				</div>
+			</div>
+		</section><!-- end #prizes -->
+		
+		<section id="contacts"  class="about">
+			<nav>
+				<ul>
+				<li><a href="#about">About</a></li>
+				<li><a href="#schedule">Schedule</a></li>
+				<li><a href="#venue">Venue</a></li>
+				<li><a href="#challeges">Challenges</a></li>
+				<li><a href="#sponsors">Sponsors</a></li>
+				<li><a href="#rules">Rules</a></li>
+				<li><a href="#prizes">Prizes</a></li>
+				<li><a href="#contacts" class="active">Contacts</a></li>
+				</ul>
+			</nav>
+			<div>
+				<div>
+					<h2>Contacts for the event</h2>
+					<dl>
+						<dt>Nelson Kelem</dt>
+						<dd>Landline: <tel>+44 1522 837 279</tel></dd>
+						<dd>Mobile: <tel>+44 7807 480 332</tel></dd>
+						<dd>nelson@ilinkoln.org</dd>
+					</dl>
+					
+					<dl>
+						<dt>Lara-Jane Kokolski</dt>
+						<dd>Landline: <tel>+44 1522 837 279</tel></dd>
+						<dd>Mobile: <tel>+44 7807 480 332</tel></dd>
+						<dd>lara@ilinkoln.org</dd>
+					</dl>
+					
+					<dl>
+						<dt>Peter Cooper</dt>
+						<dd>Landline: <tel>+44 1522 837 279</tel></dd>
+						<dd>Mobile: <tel>+44 7807 480 332</tel></dd>
+						<dd>peter@ilinkoln.org</dd>
+					</dl>
+				</div>
+				<div id="twitter_feed">
+					
+				</div>
+			</div>
+		</section><!-- end #contacts -->
+		
+		
+	</div><!-- end #container -->
+	
+	<footer>
+		<p>This event is organised by iLinkoln.org. Nelson Kelem is the Lincoln hack event producer, so if you have any questions, he is your man.</p>
+	</footer>
+	
+	
+</body>
+</html>
+	
