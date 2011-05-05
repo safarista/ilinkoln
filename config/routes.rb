@@ -9,6 +9,7 @@ IlinkolnBlog::Application.routes.draw do
   match "/about_us"               => "pages#about_us"
   match "/contact_us"             => "pages#contact_us"
   match "/lincoln_hack"             => "pages#lincoln_hack"
+  get :download, :controller => "pages"
   
   resources :categories
   resources :members

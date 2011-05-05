@@ -18,6 +18,10 @@ class PagesController < ApplicationController
     end
   end
   
+  def download
+    send_file("#{RAILS_ROOT}/images/LincolnHack1SponsorDocument.pdf", :disposition => "attachment")
+  end
+  
   def events
     url = "https://api.meetup.com/events?key=60451a4524d6d1b1f3af3551b4111&sign=true&status=upcoming&group_urlname=ilinkoln"
     events = JSON.load(open(url).read)

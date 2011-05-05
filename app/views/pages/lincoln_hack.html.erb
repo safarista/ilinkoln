@@ -37,9 +37,17 @@
 		#logo{font-size:80px;color:#e34c25; margin:20px 0;}
 		.fancyfont{font-size:40px;}
 		li{list-style-type:square;}
-		nav{font-size:26px;font-weight:bold;padding:15px 0;background-color:#e34c25;-webkit-border-top-right-radius:4em;-webkit-border-bottom-right-radius:1em;}
-		nav li{list-style-type:none;display:inline; }
-		nav ul{margin:0;}
+		nav{font-size:26px;
+			font-weight:bold;
+			padding:15px 0;
+			background-color:#e34c25;
+			-webkit-border-top-right-radius:4em;
+			-webkit-border-bottom-right-radius:1em;
+			-moz-border-radius:0 4em 1em 0;
+			border-radius:0 4em 1em 0;
+			}
+		nav li{list-style-type:none;display:inline; margin-right:10px;}
+		nav ul{margin:0;margin-left:-30px;}
 		
 		.col1{width:460px; float:left;padding:0 8px;}
 		.active{color:#fff/*160a00*/;}
@@ -91,7 +99,7 @@
 	<div id="container" class="clearfix">
 		<header>
 			<h1 id="logo">Lincoln Hack</h1>
-			<h2  id="date"><time datetime="18-06-2011T09:00">18-19 June 2011</time>, Lincoln <%= link_to image_tag("register_now_free.png", :alt => "Registration is free" ), "//www.meetup.com/ilinkoln", :title => "Register now for free", :class => "float_rt registration" %></h2>
+			<h2  id="date"><time datetime="18-06-2011T09:00">Sat 18 - Sun 19 June, 2011</time> <%= link_to image_tag("register_now_free.png", :alt => "Registration is free" ), "//www.meetup.com/iLinkoln/events/17555476/", :title => "Register now for free", :class => "float_rt registration", :target => "_blank" %></h2>
 		</header>
 		
 		
@@ -112,6 +120,10 @@
 				<div  class="col1">
 					<h2>Open Hack(Hack Fest)</h2> 
 					<p>A hack day is an event where developers, designers and people with ideas gather to build <mark>'cool stuff'</mark> - the events now run all over the world and are organised by <em>Yahoo!</em> as well as other organisations such as the <em>BBC</em>, <em>Lonely Planet</em> and even government departments across the world.</p> 
+					<h3>Benefits</h3>
+					<p>Innovation on the fly.</p>
+					<p>Get down to work and produce 3 months worth of work in 24hrs. Tested and proven.</p>
+					<p>Companies are seeing real productivity with internal hack days.</p>
 				</div>
 				<div  class="col1">
 					<h2>Lincoln Hack</h2>
@@ -241,10 +253,10 @@
 			</nav>
 			<div>
 				<div>
-					<h2>Lincoln Open Hack</h2>
-					<p>The hack event will be a first of its kind to take place in Lincoln.</p> 
-					<p>A hack day is an event where developers, designers and people with ideas gather to build <mark>'cool stuff'</mark> - the events now run all over the world and are organised by <em>Yahoo!</em> as well as other organisations such as the <em>BBC</em>, <em>Lonely Planet</em> and even government departments across the world.</p> 
-					<p>It will take place on the Lincoln University grounds in the atrium of the main admin building.</p>
+					<h2>Sponsors</h2>
+					<p>This event may not be possible without you. We don't have any so far but we will not let that stop us.</p> 
+					<p>If you would like to sponsor us please get in touch with by emailing nelson@ilinkoln.org, lara@ilikoln.org or amy@ilinkoln.org or call 07807480332.</p> 
+					<p>For a preview of what we expect from sponsors please download the <%= link_to "Sponsorship Document", :action => "download", :controller => "pages" %></p>
 				</div>
 				<div id="twitter_feed">
 					
