@@ -30,16 +30,26 @@
 		#lincshack{background-color:#fff/*160a00*/;font-family:helvetica, arial, serif;color:#000;font-size:18px;}
 		#container{margin:40px auto;width:960px;}
 		#logo, .fancyfont, h2, h3,dt{font-family: 'Arvo', arial, serif;}
+		dt {font-weight:bold;}
 		#logo{font-size:80px;color:#e34c25;}
 		.fancyfont{font-size:40px;}
 		li{list-style-type:square;}
-		nav{font-size:26px;font-weight:bold;padding:20px;margin:15px 0;background-color:#e34c25;-webkit-border-top-right-radius:4em;/*-webkit-border-bottom-right-radius:2em;*/}
+		nav{font-size:26px;font-weight:bold;padding:15px 0;background-color:#e34c25;-webkit-border-top-right-radius:4em;-webkit-border-bottom-right-radius:1em;}
 		nav li{list-style-type:none;display:inline; }
-		.col1{width:470px;}
+		nav ul{margin:0;}
+		
+		.col1{width:460px; float:left;padding:0 8px;}
 		.active{color:#fff/*160a00*/;}
 		a{color:#000;text-decoration:none;}
 		.float_rt{float:right;}
-		#map_canvas{height:100%;}
+		#contacts dl {width:300px;margin:10px;float:left;}
+		#map_canvas{height:100%;}.clearfix:before, .clearfix:after {
+		  content: "\0020"; display: block; height: 0; visibility: hidden;	
+		} 
+		#schedule{margin-bottom:20px;}
+		#schedule .schedule > div{width:450px;margin:0 10px;float:left;}
+		.clearfix:after { clear: both; }
+		.clearfix { zoom: 1; }
 	</style>
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;key=ABQIAAAAXQa8lsEoleTl2c37BIA_ERQPSbhHvN0x4TnvYWevUSKQ8M94TBRFH-sE0UbGyYLmNp7h4LC48yhoEw"></script>
 	<script>
@@ -68,16 +78,16 @@
 	<%= csrf_meta_tag %>
 	
 </head>
-<body  id="lincshack">
+<body onload="initialize()"  id="lincshack">
 
-	<div onload="initialize()" id="container">
+	<div id="container" class="clearfix">
 		<header>
 			<h1 id="logo">Lincoln Hack</h1>
 			<h2>18-19 June 2011, Lincoln <%= link_to "Register Now", "//www.meetup.com/ilinkoln", :title => "Register now for free", :class => "float_rt fancyfont" %></h2>
 		</header>
 		
 		
-		<section id="about"  class="about">
+		<section id="about"  class="about clearfix">
 			<nav role="main">
 				<ul>
 				<li><a href="#about"  class="active">About</a></li>
@@ -92,19 +102,24 @@
 			</nav>
 			<div>
 				<div  class="col1">
-					<h2>Lincoln Open Hack</h2>
-					<p>The hack event will be a first of its kind to take place in Lincoln.</p> 
+					<h2>Open Hack(Hack Fest)</h2> 
 					<p>A hack day is an event where developers, designers and people with ideas gather to build <mark>'cool stuff'</mark> - the events now run all over the world and are organised by <em>Yahoo!</em> as well as other organisations such as the <em>BBC</em>, <em>Lonely Planet</em> and even government departments across the world.</p> 
+				</div>
+				<div  class="col1">
+					<h2>Lincoln Hack</h2>
+					<p>The hack event will be a first of its kind to take place in Lincoln.</p> 
+					<p>This is an open and FREE event. All you bring is you and a great attitude. There will be no sleeping space</p>
+					<p>The event is intended to ignite collaboration and to bring Lincoln up to speed with other iconic cities in the digital sphere.</p>
+					<p>Companies can get the best use of their API's or a new service created all together in 24hrs.</p>
+					<p>Employers and employees will benefit from sponsoring and meeting each other.</p>
+					<p>You can crack on that wicked idea in a positive and creative environment. </p>
 					<p>It will take place on the Lincoln University grounds in the atrium of the main admin building.</p>
 				</div>
-				<div id="map_canvas">
-					
-				</div>
 			</div>
-		</section><!-- end #main -->
+		</section><!-- end #about -->
 		
 		
-		<section id="schedule"  class="about">
+		<section id="schedule"  class="about clearfix">
 			<nav>
 				<ul>
 				<li><a href="#about">About</a></li>
@@ -117,15 +132,32 @@
 				<li><a href="#contacts">Contacts</a></li>
 				</ul>
 			</nav>
-			<div>
+			<div  class="schedule">
+				<h2>Schedule</h2>
+				<p>(This is a very rough schedule and is subject to change)</p>
+				
 				<div>
-					<h2>Lincoln Open Hack</h2>
-					<p>The hack event will be a first of its kind to take place in Lincoln.</p> 
-					<p>A hack day is an event where developers, designers and people with ideas gather to build <mark>'cool stuff'</mark> - the events now run all over the world and are organised by <em>Yahoo!</em> as well as other organisations such as the <em>BBC</em>, <em>Lonely Planet</em> and even government departments across the world.</p> 
-					<p>It will take place on the Lincoln University grounds in the atrium of the main admin building.</p>
+					<dl>
+					<dt>Day One</dt>
+					<dd>09:30 – Registration</dd>
+					<dd>10:30 – Introduction</dd>
+					<dd>11:00 – Lunch</dd>
+					<dd>12:00 – HACKING BEGINS</dd>
+					<dd>16:00 – Dinner</dd>
+					</dl>
 				</div>
-				<div id="twitter_feed">
-					
+				<div>
+					<dl>
+					<dt>Day Two</dt>
+					<dd>08:00 – Breakfast</dd>
+					<dd>12:00 – HACKING ENDS</dd>
+					<dd>12:01 – Judges walk around</dd>
+					<dd>13:00 – Lunch</dd>
+					<dd>14:30 – Presentations begin</dd>
+					<dd>15:30 – Judging Begins</dd>
+					<dd>16:00 – Awards</dd>
+					<dd>17:00 – Tidy up and go home time</dd>
+					</dl>
 				</div>
 			</div>
 		</section><!-- end #main -->
@@ -144,13 +176,13 @@
 				</ul>
 			</nav>
 			<div>
-				<div  class="col1">
-					<h2>Venue details</h2>
-					<p>The hack event will be a first of its kind to take place in Lincoln.</p> 
-					<p>A hack day is an event where developers, designers and people with ideas gather to build <mark>'cool stuff'</mark> - the events now run all over the world and are organised by <em>Yahoo!</em> as well as other organisations such as the <em>BBC</em>, <em>Lonely Planet</em> and even government departments across the world.</p> 
-					<p>It will take place on the Lincoln University grounds in the atrium of the main admin building.</p>
-				</div>
-				<div></div>
+				<h2>Location Map, Hotels and Parking Information</h2>
+				<p>Parking: will be at the university grounds. Park at your own risk. More parking at Odeon Cinema.</p>
+				<p>Hotels:	<a href="#">Holiday Inn</a> 
+							<a href="#">Lincoln Hotel</a>
+							<a href="#">Castle View Hotel</a>
+				</p>
+				<div id="map_canvas" width="100%" height="400"></div>
 			</div>
 		</section><!-- end #main -->
 		
@@ -221,7 +253,7 @@
 			</nav>
 			<div>
 				<div>
-					<h2>There are simple rules</h2>
+					<h2>There are some simple rules</h2>
 					<ul>
 					<li>Teams of 4 or less</li>
 					<li>Entry to the hack day is at your own risk, Lincoln Hack, iLinkoln.org or any of the organisers shall not be held responsible if you break a leg or something.</li>
@@ -267,7 +299,7 @@
 			</div>
 		</section><!-- end #prizes -->
 		
-		<section id="contacts"  class="about">
+		<section id="contacts"  class="about clearfix">
 			<nav>
 				<ul>
 				<li><a href="#about">About</a></li>
