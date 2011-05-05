@@ -27,11 +27,14 @@
 	<!-- CSS : implied media="all" 
 	<%= stylesheet_link_tag "lincoln_hack", :media => "screen" %>-->
 	<style>
-		#lincshack{background-color:#fff/*160a00*/;font-family:helvetica, arial, serif;color:#000;font-size:18px;}
+		html { height: 100% }
+		body { height: 100%; margin: 0px; padding: 0px }
+		#map_canvas { height: 100% }
+		#lincshack{background-color:#fff/*160a00*/;font-family:helvetica, arial, serif;color:#444444;font-size:18px;}
 		#container{margin:40px auto;width:960px;}
 		#logo, .fancyfont, h2, h3,dt{font-family: 'Arvo', arial, serif;}
 		dt {font-weight:bold;}
-		#logo{font-size:80px;color:#e34c25;}
+		#logo{font-size:80px;color:#e34c25; margin:20px 0;}
 		.fancyfont{font-size:40px;}
 		li{list-style-type:square;}
 		nav{font-size:26px;font-weight:bold;padding:15px 0;background-color:#e34c25;-webkit-border-top-right-radius:4em;-webkit-border-bottom-right-radius:1em;}
@@ -46,6 +49,7 @@
 		#map_canvas{height:100%;}.clearfix:before, .clearfix:after {
 		  content: "\0020"; display: block; height: 0; visibility: hidden;	
 		} 
+		#date{font-size:40px;}
 		#schedule{margin-bottom:20px;}
 		#schedule .schedule > div{width:450px;margin:0 10px;float:left;}
 		.clearfix:after { clear: both; }
@@ -83,7 +87,7 @@
 	<div id="container" class="clearfix">
 		<header>
 			<h1 id="logo">Lincoln Hack</h1>
-			<h2>18-19 June 2011, Lincoln <%= link_to "Register Now", "//www.meetup.com/ilinkoln", :title => "Register now for free", :class => "float_rt fancyfont" %></h2>
+			<h2  id="date"><time datetime="18-06-2011T09:00">18-19 June 2011</time>, Lincoln <%= link_to image_tag("register_now_free.png"), "//www.meetup.com/ilinkoln", :title => "Register now for free", :class => "float_rt" %></h2>
 		</header>
 		
 		
@@ -182,7 +186,7 @@
 							<a href="#">Lincoln Hotel</a>
 							<a href="#">Castle View Hotel</a>
 				</p>
-				<div id="map_canvas" width="100%" height="400"></div>
+				<div id="map_canvas"  class="clearfix"></div>
 			</div>
 		</section><!-- end #main -->
 		
