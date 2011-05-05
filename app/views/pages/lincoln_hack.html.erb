@@ -50,8 +50,12 @@
 		  content: "\0020"; display: block; height: 0; visibility: hidden;	
 		} 
 		#date{font-size:40px;}
+		#date img{position:relative;bottom:-7px;}
 		#schedule{margin-bottom:20px;}
 		#schedule .schedule > div{width:450px;margin:0 10px;float:left;}
+		#challenges .challenge > div{width:450px;margin:0 10px;float:left;}
+		footer{width:700px;margin:20px auto;}
+		footer p{text-align:center;}
 		.clearfix:after { clear: both; }
 		.clearfix { zoom: 1; }
 	</style>
@@ -87,7 +91,7 @@
 	<div id="container" class="clearfix">
 		<header>
 			<h1 id="logo">Lincoln Hack</h1>
-			<h2  id="date"><time datetime="18-06-2011T09:00">18-19 June 2011</time>, Lincoln <%= link_to image_tag("register_now_free.png"), "//www.meetup.com/ilinkoln", :title => "Register now for free", :class => "float_rt" %></h2>
+			<h2  id="date"><time datetime="18-06-2011T09:00">18-19 June 2011</time>, Lincoln <%= link_to image_tag("register_now_free.png", :alt => "Registration is free" ), "//www.meetup.com/ilinkoln", :title => "Register now for free", :class => "float_rt registration" %></h2>
 		</header>
 		
 		
@@ -186,11 +190,14 @@
 							<a href="#">Lincoln Hotel</a>
 							<a href="#">Castle View Hotel</a>
 				</p>
-				<div id="map_canvas"  class="clearfix"></div>
+				<div id=""  class="clearfix"><%= link_to image_tag("lincolnMap.png", :alt => "location map"), 
+																			"http://maps.google.co.uk/maps?rls=en&q=lincoln&oe=UTF-8&redir_esc=&um=1&ie=UTF-8&hq=&hnear=Lincoln&gl=uk&ei=87LCTeuZIt7Y4wat7r3tBA&sa=X&oi=geocode_result&ct=image&resnum=1&ved=0CDsQ8gEwAA", 
+																			:title => "Lincoln University map", :target => "_blank"  %>
+																			</div>
 			</div>
 		</section><!-- end #main -->
 		
-		<section id="challenges"  class="about">
+		<section id="challenges"  class="clearfix">
 			<nav>
 				<ul>
 				<li><a href="#about">About</a></li>
@@ -203,15 +210,18 @@
 				<li><a href="#contacts">Contacts</a></li>
 				</ul>
 			</nav>
-			<div>
+			<div  class="challenge ">
 				<div>
-					<h2>Lincoln Open Hack</h2>
-					<p>The hack event will be a first of its kind to take place in Lincoln.</p> 
-					<p>A hack day is an event where developers, designers and people with ideas gather to build <mark>'cool stuff'</mark> - the events now run all over the world and are organised by <em>Yahoo!</em> as well as other organisations such as the <em>BBC</em>, <em>Lonely Planet</em> and even government departments across the world.</p> 
-					<p>It will take place on the Lincoln University grounds in the atrium of the main admin building.</p>
+					<h2>From Sponsors</h2>
+					<p>Best Mobile App</p> 
+					<p>Best Web App</p> 
+					<p>API Best Design (Dashboard)</p>
+					<p>Gaming App</p>
 				</div>
-				<div id="twitter_feed">
-					
+				<div>
+					<h2>From Attendees</h2>
+					<p>We will update this section as we get them in</p> 
+					<p>Please email us your suggestions.</p>
 				</div>
 			</div>
 		</section><!-- end #challenges -->
@@ -292,10 +302,13 @@
 			</nav>
 			<div>
 				<div>
-					<h2>Lincoln Open Hack</h2>
-					<p>The hack event will be a first of its kind to take place in Lincoln.</p> 
-					<p>A hack day is an event where developers, designers and people with ideas gather to build <mark>'cool stuff'</mark> - the events now run all over the world and are organised by <em>Yahoo!</em> as well as other organisations such as the <em>BBC</em>, <em>Lonely Planet</em> and even government departments across the world.</p> 
-					<p>It will take place on the Lincoln University grounds in the atrium of the main admin building.</p>
+					<h2>Prizes and Winners</h2>
+					<ol>
+					<li>Prize "Name" from "Sponsor", WINNER: "Team Name"(Person 1, Person 2, Person 3, Person 4)</li>
+					<li>Prize "Name" from "Sponsor", WINNER: "Team Name"(Person 1, Person 2, Person 3, Person 4)</li>
+					<li>Prize "Name" from "Sponsor", WINNER: "Team Name"(Person 1, Person 2, Person 3, Person 4)</li>
+					<li>Prize "Name" from "Sponsor", WINNER: "Team Name"(Person 1, Person 2, Person 3, Person 4)</li>
+					</ol>
 				</div>
 				<div id="twitter_feed">
 					
@@ -323,21 +336,21 @@
 						<dt>Nelson Kelem</dt>
 						<dd>Landline: <tel>+44 1522 837 279</tel></dd>
 						<dd>Mobile: <tel>+44 7807 480 332</tel></dd>
-						<dd>nelson@ilinkoln.org</dd>
+						<dd>Email: nelson@ilinkoln.org</dd>
 					</dl>
 					
 					<dl>
 						<dt>Lara-Jane Kokolski</dt>
 						<dd>Landline: <tel>+44 1522 837 279</tel></dd>
 						<dd>Mobile: <tel>+44 7807 480 332</tel></dd>
-						<dd>lara@ilinkoln.org</dd>
+						<dd>Email: lara@ilinkoln.org</dd>
 					</dl>
 					
 					<dl>
-						<dt>Peter Cooper</dt>
+						<dt>Amy Guy</dt>
 						<dd>Landline: <tel>+44 1522 837 279</tel></dd>
 						<dd>Mobile: <tel>+44 7807 480 332</tel></dd>
-						<dd>peter@ilinkoln.org</dd>
+						<dd>Email: amy@ilinkoln.org</dd>
 					</dl>
 				</div>
 				<div id="twitter_feed">
@@ -349,8 +362,8 @@
 		
 	</div><!-- end #container -->
 	
-	<footer>
-		<p>This event is organised by iLinkoln.org. Nelson Kelem is the Lincoln hack event producer, so if you have any questions, he is your man.</p>
+	<footer  class="clearfix">
+		<p>This event is organised by iLinkoln.org. Nelson Kelem is the Lincoln hack event producer if you have any questions, he is your man.</p>
 	</footer>
 	
 	
