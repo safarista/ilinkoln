@@ -19,7 +19,7 @@ class PagesController < ApplicationController
   end
   
   def download
-    send_data("#{RAILS_ROOT}/images/LincolnHack1SponsorDocument.pdf", :disposition => "inline")
+    send_data("#{RAILS_ROOT}/images/LincolnHack1SponsorDocument.pdf", :disposition => "attachment")
   end
   
   def events
