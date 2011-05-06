@@ -46,12 +46,13 @@
 			-moz-border-radius:0 4em 1em 0;
 			border-radius:0 4em 1em 0;
 			}
-		nav li{list-style-type:none;display:inline; margin-right:10px;}
+		nav li{list-style-type:none;display:inline; margin-right:7px;}
 		nav ul{margin:0;margin-left:-30px;}
-		
+		nav a{color:#160a00;}
 		.col1{width:460px; float:left;padding:0 8px;}
 		.active{color:#fff/*160a00*/;}
-		a{color:#000;text-decoration:none;}
+		a{color:#0000CC;text-decoration:none;}
+		a:hover{text-decoration:underline;}
 		.float_rt{float:right;}
 		#contacts dl {width:300px;margin:10px;float:left;}
 		#map_canvas{height:100%;}.clearfix:before, .clearfix:after {
@@ -109,7 +110,7 @@
 				<li><a href="#about"  class="active">About</a></li>
 				<li><a href="#schedule">Schedule</a></li>
 				<li><a href="#venue">Venue</a></li>
-				<li><a href="#challeges">Challenges</a></li>
+				<li><a href="#challenges">Challenges</a></li>
 				<li><a href="#sponsors">Sponsors</a></li>
 				<li><a href="#rules">Rules</a></li>
 				<li><a href="#prizes">Prizes</a></li>
@@ -145,7 +146,7 @@
 				<li><a href="#about">About</a></li>
 				<li><a href="#schedule" class="active">Schedule</a></li>
 				<li><a href="#venue">Venue</a></li>
-				<li><a href="#challeges">Challenges</a></li>
+				<li><a href="#challenges">Challenges</a></li>
 				<li><a href="#sponsors">Sponsors</a></li>
 				<li><a href="#rules">Rules</a></li>
 				<li><a href="#prizes">Prizes</a></li>
@@ -188,7 +189,7 @@
 				<li><a href="#about">About</a></li>
 				<li><a href="#schedule">Schedule</a></li>
 				<li><a href="#venue" class="active">Venue</a></li>
-				<li><a href="#challeges">Challenges</a></li>
+				<li><a href="#challenges">Challenges</a></li>
 				<li><a href="#sponsors">Sponsors</a></li>
 				<li><a href="#rules">Rules</a></li>
 				<li><a href="#prizes">Prizes</a></li>
@@ -198,8 +199,8 @@
 			<div>
 				<h2>Location Map, Hotels and Parking Information</h2>
 				<p>Parking: will be at the university grounds. Park at your own risk. More parking at Odeon Cinema.</p>
-				<p>Hotels:	<a href="#">Holiday Inn</a> 
-							<a href="#">Lincoln Hotel</a>
+				<p>Hotels:	<a href="#">Holiday Inn</a>, 
+							<a href="#">Lincoln Hotel</a>,
 							<a href="#">Castle View Hotel</a>
 				</p>
 				<div id=""  class="clearfix"><%= link_to image_tag("lincolnMap.png", :alt => "location map"), 
@@ -215,7 +216,7 @@
 				<li><a href="#about">About</a></li>
 				<li><a href="#schedule">Schedule</a></li>
 				<li><a href="#venue">Venue</a></li>
-				<li><a href="#challeges" class="active">Challenges</a></li>
+				<li><a href="#challenges" class="active">Challenges</a></li>
 				<li><a href="#sponsors">Sponsors</a></li>
 				<li><a href="#rules">Rules</a></li>
 				<li><a href="#prizes">Prizes</a></li>
@@ -244,7 +245,7 @@
 				<li><a href="#about">About</a></li>
 				<li><a href="#schedule">Schedule</a></li>
 				<li><a href="#venue">Venue</a></li>
-				<li><a href="#challeges">Challenges</a></li>
+				<li><a href="#challenges">Challenges</a></li>
 				<li><a href="#sponsors" class="active">Sponsors</a></li>
 				<li><a href="#rules">Rules</a></li>
 				<li><a href="#prizes">Prizes</a></li>
@@ -255,7 +256,7 @@
 				<div>
 					<h2>Sponsors</h2>
 					<p>This event may not be possible without you. We don't have any so far but we will not let that stop us.</p> 
-					<p>If you would like to sponsor us please get in touch with by emailing nelson@ilinkoln.org, lara@ilikoln.org or amy@ilinkoln.org or call 07807480332.</p> 
+					<p>If you would like to sponsor us please get in touch with by emailing <a href="mailto:nelson@ilinkoln.org?subject=lincoln_hack_question">nelson@ilinkoln.org</a>, <a href="mailto:lara@ilinkoln.org?subject=lincoln_hack_question">lara@ilinkoln.org</a> or <a href="mailto:amy@ilinkoln.org?subject=lincoln_hack_question">amy@ilinkoln.org</a> or call 07807480332.</p> 
 					<p>For a preview of what we expect from sponsors please download the <%= link_to "Sponsorship Document", :action => "download", :controller => "pages" %></p>
 				</div>
 				<div id="twitter_feed">
@@ -270,7 +271,7 @@
 				<li><a href="#about">About</a></li>
 				<li><a href="#schedule">Schedule</a></li>
 				<li><a href="#venue">Venue</a></li>
-				<li><a href="#challeges">Challenges</a></li>
+				<li><a href="#challenges">Challenges</a></li>
 				<li><a href="#sponsors">Sponsors</a></li>
 				<li><a href="#rules" class="active">Rules</a></li>
 				<li><a href="#prizes">Prizes</a></li>
@@ -305,7 +306,7 @@
 				<li><a href="#about">About</a></li>
 				<li><a href="#schedule">Schedule</a></li>
 				<li><a href="#venue">Venue</a></li>
-				<li><a href="#challeges">Challenges</a></li>
+				<li><a href="#challenges">Challenges</a></li>
 				<li><a href="#sponsors">Sponsors</a></li>
 				<li><a href="#rules">Rules</a></li>
 				<li><a href="#prizes" class="active">Prizes</a></li>
@@ -334,7 +335,7 @@
 				<li><a href="#about">About</a></li>
 				<li><a href="#schedule">Schedule</a></li>
 				<li><a href="#venue">Venue</a></li>
-				<li><a href="#challeges">Challenges</a></li>
+				<li><a href="#challenges">Challenges</a></li>
 				<li><a href="#sponsors">Sponsors</a></li>
 				<li><a href="#rules">Rules</a></li>
 				<li><a href="#prizes">Prizes</a></li>

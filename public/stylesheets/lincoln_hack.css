@@ -101,7 +101,7 @@ body, select, input, textarea {
 
 /* Headers (h1,h2,etc) have no default font-size or margin,
    you'll want to define those yourself. */ 
-h1,h2,h3,h4,h5,h6,dt { padding:0;font-family:IlinkolnedBold;}
+h1,h2,h3,h4,h5,h6,dt { padding:0;font-family:'Arvo', arial, serif;;}
 
 /* always force a scrollbar in non-IE */ 
 html { overflow-y: scroll; }

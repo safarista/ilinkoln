@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   end
   
   def contact_us
-    
+    @title = "Contact Nelson Kelem with any correspondence"
   end
   
   def lincoln_hack
@@ -19,7 +19,7 @@ class PagesController < ApplicationController
   end
   
   def download
-    send_file("#{RAILS_ROOT}/images/LincolnHack1SponsorDocument.pdf", :disposition => "attachment")
+    send_data("#{RAILS_ROOT}/images/LincolnHack1SponsorDocument.pdf", :disposition => "inline")
   end
   
   def events
