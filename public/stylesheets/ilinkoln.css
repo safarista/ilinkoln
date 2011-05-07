@@ -519,8 +519,11 @@ footer p{text-align: center;}
 #main .article ul li{list-style-type:circle;margin-left:20px;border-bottom:none;}
 #main article li{border-bottom:none;padding:3px 0;}
 
-
-
+/*LINCOLN HACK*/
+#hack_event{background-color:#e34c25;font-family: 'Arvo', arial, serif;text-align:center;padding:10px;border-radius:8px;-moz-border-radius:8px;-webkit-border-radius:8px;margin:10px 0;}
+#hack_event span{line-height:24px;}
+#hack_event span a,#hack_event h3, #hack_event time{font-size:18px;color:#fff;}
+#hack_event h3, #hack_event time{font-size:18px;color:#111;text-shadow:0 1px 0 #999999;padding-bottom:10px;}
 
 
 
