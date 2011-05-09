@@ -45,6 +45,7 @@
   <div id="container">
     <header>
 		<h1 id="logo"><%= link_to raw("<em>i</em>LINKOLN"), root_url %></h1>
+		<p class="float_ctr"><%= link_to image_tag("register_now_free.png", :alt => "Registration is free" ), "//www.meetup.com/iLinkoln/events/17555476/", :title => "Register now for free", :target => "_blank" %></p>
     </header>
 		<% flash.each do |name, msg| %>
 			<%= content_tag :div, msg, :id => "flash_#{name}" %>

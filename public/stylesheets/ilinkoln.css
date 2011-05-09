@@ -255,6 +255,7 @@ pre, code{
 
 .float_rt{float:right;}
 .float_lt{float:left;}
+.float_ctr{text-align:center;}
 pre{
 	background-color: #F8F8FF !important;
 	    border: 1px solid #DEDEDE !important;

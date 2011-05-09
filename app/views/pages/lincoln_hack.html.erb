@@ -61,9 +61,7 @@
 		#date{font-size:40px;}
 		#date img{position:relative;bottom:-7px;}
 		#schedule{margin-bottom:20px;}
-		#schedule .schedule >,
-		#challenges .challenge >,
-		#venue .venue > div{width:450px;margin:0 10px;float:left;}
+		#schedule .schedule > div, #challenges .challenge > div, #venue .venue > div{width:450px;margin:0 10px;float:left;}
 		footer{width:700px;margin:20px auto;}
 		footer p{text-align:center;}
 		.clearfix:after { clear: both; }
@@ -126,6 +124,7 @@
 					<p>Innovation on the fly.</p>
 					<p>Get down to work and produce 3 months worth of work in 24hrs. Tested and proven.</p>
 					<p>Companies are seeing real productivity with internal hack days.</p>
+					<p><%= link_to image_tag("register_now_free.png", :alt => "Registration is free" ), "//www.meetup.com/iLinkoln/events/17555476/", :title => "Register now for free", :target => "_blank" %></p>
 				</div>
 				<div  class="col1">
 					<h2>Lincoln Hack</h2>
@@ -184,7 +183,7 @@
 			</div>
 		</section><!-- end #main -->
 		
-		<section id="venue"  class="about">
+		<section id="venue"  class="about clearfix">
 			<nav>
 				<ul>
 				<li><a href="#about">About</a></li>
@@ -198,9 +197,8 @@
 				</ul>
 			</nav>
 			<div  class="venue">
-				<div>
 				<h2>Location Map, Hotels and Parking Information</h2>
-				 
+				<div class="">
 				<address>
 					Atrium Room - 1st Floor,<br>
 					Main Administration Building, <br>
@@ -210,8 +208,9 @@
 				<p>Parking: will be at the university grounds. Park at your own risk. More parking at Odeon Cinema.</p>
 				<p>Hotels:	Holiday Inn, Lincoln Hotel, Castle View Hotel
 				</p>
+				<p><%= link_to image_tag("register_now_free.png", :alt => "Registration is free" ), "//www.meetup.com/iLinkoln/events/17555476/", :title => "Register now for free", :target => "_blank" %></p>
 				</div>
-				<div id=""  class="clearfix"><%= link_to image_tag("lincolnMap.png", :alt => "location map"), 
+				<div id=""  class="col1 clearfix"><%= link_to image_tag("lincolnMap.png", :alt => "location map"), 
 																			"http://maps.google.co.uk/maps?rls=en&q=lincoln&oe=UTF-8&redir_esc=&um=1&ie=UTF-8&hq=&hnear=Lincoln&gl=uk&ei=87LCTeuZIt7Y4wat7r3tBA&sa=X&oi=geocode_result&ct=image&resnum=1&ved=0CDsQ8gEwAA", 
 																			:title => "Lincoln University map", :target => "_blank"  %>
 																			</div>
@@ -263,9 +262,12 @@
 			<div>
 				<div>
 					<h2>Sponsors</h2>
-					<p>This event may not be possible without you. We don't have any so far but we will not let that stop us.</p> 
+					<p>This event may not be possible without you. We now have 2 so far and awaiting more responses from contact made.</p> 
 					<p>If you would like to sponsor us please get in touch with by emailing <a href="mailto:nelson@ilinkoln.org?subject=lincoln_hack_question">nelson@ilinkoln.org</a>, <a href="mailto:lara@ilinkoln.org?subject=lincoln_hack_question">lara@ilinkoln.org</a> or <a href="mailto:amy@ilinkoln.org?subject=lincoln_hack_question">amy@ilinkoln.org</a> or call 07807480332.</p> 
 					<p>For a preview of what we expect from sponsors please download the <%= link_to "Sponsorship Document", "//safarista.com/lincolnhacksponsorshipdoc.pdf", :title => "Sponsorship Document" %></p>
+					<h3><a href="http://www.lingscars.com/">LINGs CARs</a></h3>
+					<p>Ling Valentine is the famous Chinglish girl from Dragons Den. She sales more cars than any 1 single sales man in a car dealers I know.</p>
+					<p><a href="http://www.lingscars.com/"><img src="//images.lingscars.com/images/sidebar/wah.gif" alt="Lings Cars"></a></p>
 				</div>
 				<div id="twitter_feed">
 					
@@ -353,7 +355,7 @@
 			</nav>
 			<div>
 				<div>
-					<h2>Contacts for the event</h2>
+					<h2>Contacts for the event<%= link_to image_tag("register_now_free.png", :alt => "Registration is free" ), "//www.meetup.com/iLinkoln/events/17555476/", :title => "Register now for free", :target => "_blank", :class => "float_rt" %></h2>
 					<dl>
 						<dt>Nelson Kelem</dt>
 						<dd>Landline: <tel>+44 1522 837 279</tel></dd>
