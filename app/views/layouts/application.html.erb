@@ -62,9 +62,9 @@
 		<dl id="new-events">
 			<dt>The Next Meetup or Event is on:</dt>
 				<dd style="font-size:2.7em; margin-top:1em; margin-bottom:1em;">
-					<%= link_to event, "/events", :style => "color:#127CC4;" %>
+					<%= link_to event, "/events", :style => "color:#127CC4;" if event %>
 				</dd>
-				<dd>At "The Hub" 1st floor inside The Engine Shed</dd>
+				<dd>At "The Enterprise Lincoln" conference room.</dd>
 				<dd>
 					<a href="http://meetup.com/ilinkoln" title="Folow the link to our caledar" target="_blank">
 					Have a look at the Calendar for more &rarr;
