@@ -37,7 +37,7 @@
 		#logo{font-size:80px;color:#e34c25; margin:20px 0;}
 		.fancyfont{font-size:40px;}
 		li{list-style-type:square;}
-		nav{font-size:26px;
+		.nav{font-size:26px;
 			font-weight:bold;
 			padding:15px 0;
 			background-color:#e34c25;
@@ -46,9 +46,9 @@
 			-moz-border-radius:0 4em 1em 0;
 			border-radius:0 4em 1em 0;
 			}
-		nav li{list-style-type:none;display:inline; margin-right:7px;}
-		nav ul{margin:0;margin-left:-30px;}
-		nav a{color:#160a00;}
+		.nav li{list-style-type:none;display:inline; margin-right:7px;}
+		.nav ul{margin:0;margin-left:-30px;}
+		.nav a{color:#160a00;}
 		.col1{width:460px; float:left;padding:0 8px;}
 		.active{color:#fff/*160a00*/;}
 		a{color:#0000CC;text-decoration:none; border:none;}
@@ -90,7 +90,7 @@
 		
 		
 		<section id="about"  class="about clearfix">
-			<nav role="main">
+			<div class="nav">
 				<ul>
 				<li><a href="#about"  class="active">About</a></li>
 				<li><a href="#schedule">Schedule</a></li>
@@ -101,7 +101,7 @@
 				<li><a href="#prizes">Prizes</a></li>
 				<li><a href="#contacts">Contacts</a></li>
 				</ul>
-			</nav>
+			</div>
 			<div>
 				<div  class="col1">
 					<h2>Open Hack(Hack Fest)</h2> 
@@ -127,7 +127,7 @@
 		
 		
 		<section id="schedule"  class="about clearfix">
-			<nav>
+			<div class="nav">
 				<ul>
 				<li><a href="#about">About</a></li>
 				<li><a href="#schedule" class="active">Schedule</a></li>
@@ -138,7 +138,7 @@
 				<li><a href="#prizes">Prizes</a></li>
 				<li><a href="#contacts">Contacts</a></li>
 				</ul>
-			</nav>
+			</div>
 			<div  class="schedule">
 				<h2>Schedule</h2>
 				<p>(This is a very rough schedule and is subject to change)</p>
@@ -171,7 +171,7 @@
 		</section><!-- end #main -->
 		
 		<section id="venue"  class="about clearfix">
-			<nav>
+			<div class="nav">
 				<ul>
 				<li><a href="#about">About</a></li>
 				<li><a href="#schedule">Schedule</a></li>
@@ -182,7 +182,7 @@
 				<li><a href="#prizes">Prizes</a></li>
 				<li><a href="#contacts">Contacts</a></li>
 				</ul>
-			</nav>
+			</div>
 			<div  class="venue">
 				<h2>Location Map, Hotels and Parking Information</h2>
 				<div class="">
@@ -205,7 +205,7 @@
 		</section><!-- end #main -->
 		
 		<section id="challenges"  class="clearfix">
-			<nav>
+			<div class="nav">
 				<ul>
 				<li><a href="#about">About</a></li>
 				<li><a href="#schedule">Schedule</a></li>
@@ -216,7 +216,7 @@
 				<li><a href="#prizes">Prizes</a></li>
 				<li><a href="#contacts">Contacts</a></li>
 				</ul>
-			</nav>
+			</div>
 			<div  class="challenge ">
 				<div>
 					<h2>Some suggestions from us</h2>
@@ -236,7 +236,7 @@
 		</section><!-- end #challenges -->
 		
 		<section id="sponsors"  class="about">
-			<nav>
+			<div class="nav">
 				<ul>
 				<li><a href="#about">About</a></li>
 				<li><a href="#schedule">Schedule</a></li>
@@ -247,7 +247,7 @@
 				<li><a href="#prizes">Prizes</a></li>
 				<li><a href="#contacts">Contacts</a></li>
 				</ul>
-			</nav>
+			</div>
 			<div>
 				<div>
 					<h2>Sponsors</h2>
@@ -265,7 +265,7 @@
 		</section><!-- end #sponsors -->
 		
 		<section id="rules"  class="about">
-			<nav>
+			<div class="nav">
 				<ul>
 				<li><a href="#about">About</a></li>
 				<li><a href="#schedule">Schedule</a></li>
@@ -276,7 +276,7 @@
 				<li><a href="#prizes">Prizes</a></li>
 				<li><a href="#contacts">Contacts</a></li>
 				</ul>
-			</nav>
+			</div>
 			<div>
 				<div>
 					<h2>There are some simple rules</h2>
@@ -300,7 +300,7 @@
 		</section><!-- end #rules -->
 		
 		<section id="prizes"  class="about">
-			<nav>
+			<div class="nav">
 				<ul>
 				<li><a href="#about">About</a></li>
 				<li><a href="#schedule">Schedule</a></li>
@@ -311,7 +311,7 @@
 				<li><a href="#prizes" class="active">Prizes</a></li>
 				<li><a href="#contacts">Contacts</a></li>
 				</ul>
-			</nav>
+			</div>
 			<div>
 				<div>
 					<h2>Prizes and Winners</h2>
@@ -330,7 +330,7 @@
 		</section><!-- end #prizes -->
 		
 		<section id="contacts"  class="clearfix">
-			<nav>
+			<div class="nav">
 				<ul>
 				<li><a href="#about">About</a></li>
 				<li><a href="#schedule">Schedule</a></li>
@@ -341,7 +341,7 @@
 				<li><a href="#prizes">Prizes</a></li>
 				<li><a href="#contacts" class="active">Contacts</a></li>
 				</ul>
-			</nav>
+			</div>
 			<div>
 					<h2>Contacts for the event<%= link_to image_tag("register_now_free.png", :alt => "Registration is free" ), "//www.meetup.com/iLinkoln/events/17555476/", :title => "Register now for free", :target => "_blank", :class => "float_rt" %></h2>
 					<dl>
