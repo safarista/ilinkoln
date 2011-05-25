@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   #before_filter :authenticate_user!, :on => :destroy
   def show
     #@post = Post.find(params[:post_id])
-    redirect_to post_path
+    redirect_to post_path(@post)
   end
   
   def create
@@ -14,11 +14,11 @@ class CommentsController < ApplicationController
   end
   
   def destroy
-    @post     = Post.find(paras[:post_id])
+    @post     = Post.find(params[:post_id])
     @comment  = @post.comments.find(params[:comment])
     @comment.destroy
     
-    redirect_to post_path(@post)
+    redirect_to @post
     
   end
 end

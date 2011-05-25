@@ -14,6 +14,14 @@ class Member < ActiveRecord::Base
     end
   end
   
+  def to_param
+    "#{id}-#{slug}"
+  end
+  
+  def slug
+    self.name.downcase.gsub(/[^a-z0-9]/, '-')
+  end
+  
   # def self.authorize(id, admin)
   #   member = find_by_id(id)
   #   if member && member.admin ||= true

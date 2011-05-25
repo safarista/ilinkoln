@@ -8,4 +8,14 @@ class Post < ActiveRecord::Base
                             :length   => { :minimum => 4 }
   
   has_many    :comments,    :dependent => :destroy
+  
+  def to_param
+    "#{id}-#{slug}"
+  end
+  
+  def slug
+    self.title.downcase.gsub(/[^a-z0-9]/, '-')
+  end
+  
+  
 end
