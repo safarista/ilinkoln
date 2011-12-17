@@ -5,9 +5,9 @@ gem 'sqlite3'
 
 group :development, :test do
 # Use unicorn as the web server
-	# gem 'unicorn'
+	# 
 end
-
+gem 'unicorn'
 gem 'json_pure'
 gem 'multi_json'
 
