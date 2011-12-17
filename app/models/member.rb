@@ -2,15 +2,18 @@ class Member < ActiveRecord::Base
   has_many :posts
   attr_protected :admin
   
+  def self.from_omniauth(auth)
+    find_by_provider_and_uid(auth["provider"], auth["uid"]) || create_with_omniauth(auth)
+  end
   def self.create_with_omniauth(auth)
     create! do |member|
       member.provider     = auth["provider"]
       member.uid          = auth["uid"]
-      member.name         = auth["user_info"]["name"]
-      member.location     = auth["user_info"]["location"]
-      member.twitter      = auth["user_info"]["nickname"]
-      member.description  = auth["user_info"]["description"]
-      member.avatar       = auth["user_info"]["image"]
+      member.name         = auth["info"]["name"]
+      member.location     = auth["info"]["location"]
+      member.twitter      = auth["info"]["nickname"]
+      member.description  = auth["info"]["description"]
+      member.avatar       = auth["info"]["image"]
     end
   end
   
@@ -22,12 +25,4 @@ class Member < ActiveRecord::Base
     self.name.downcase.gsub(/[^a-z0-9]/, '-')
   end
   
-  # def self.authorize(id, admin)
-  #   member = find_by_id(id)
-  #   if member && member.admin ||= true
-  #     member
-  #   else
-  #     nil
-  #   end
-  # end
 end

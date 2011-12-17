@@ -45,7 +45,6 @@
   <div id="container">
     <header>
 		<h1 id="logo"><%= link_to raw("<em>i</em>LINKOLN"), root_url %></h1>
-		<p class="float_ctr"><%= link_to image_tag("register_now_free.png", :alt => "Registration is free" ), "//www.meetup.com/iLinkoln/events/17555476/", :title => "Register now for free", :target => "_blank" %></p>
     </header>
 		<% flash.each do |name, msg| %>
 			<%= content_tag :div, msg, :id => "flash_#{name}" %>
@@ -73,14 +72,14 @@
 				<dd>
 					<div id="hack_event">
 						<h3>Lincoln Hack</h3>
-						<span><a href="//www.meetup.com/iLinkoln/events/17555476/">REGISTER NOW FREE</a></span>
+						<span><a href="//www.meetup.com/iLinkoln/events/44684942/">REGISTER NOW FREE</a></span>
 						<span>
-							<time datetime="18-06-2011T09:00 to 19-06-2011T17:00">18-19 June, 2011</time>
+							<time datetime="16-06-2011T09:00 to 17-06-2011T17:00">16-17 June, 2011</time>
 							<br>
-							<a href="/lincoln_hack">More Info</a>
+							<!-- <a href="/lincoln_hack">More Info</a> -->
 							<br>
 							<br>
-							<a href="//safarista.com/lincolnhacksponsorshipdoc.pdf">Sponsorship Info</a>
+							<a href="#">Sponsorship Info</a>
 						</span>
 					</div>
 				</dd>
@@ -104,7 +103,7 @@
 					<% if current_member %>
 					<span >| <%= link_to current_member.name, current_member, :style => "color:red" %> &rarr; <%= link_to "Sign Out", signout_path %></span>
 					<% else %>
-					| <%= link_to "Signin with twitter", "/auth/twitter", :title => "Sign in through twitter" %>
+					| <%= link_to "Login with twitter", "/auth/twitter/callback" %>
 					<% end %>
 				</li>
 			</ul>

@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  helper_method :current_member, :signed_in?, :admin?, :owner?, :authorize
+ 
   
   protected
   def current_member
@@ -32,5 +32,5 @@ class ApplicationController < ActionController::Base
       false
     end
   end
-
+ helper_method :current_member, :signed_in?, :admin?, :owner?, :authorize
 end

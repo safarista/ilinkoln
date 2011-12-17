@@ -2,14 +2,13 @@ IlinkolnBlog::Application.routes.draw do
   
   #devise_for :accounts, :controlers => {:sessions => "sessions"}
 
-  match "auth/:provider/callback" => "sessions#create"
-  match "/signout"                => "sessions#destroy", :as => :signout
-  match "auth/failure"            => "posts#index" 
+  match "/auth/:provider/callback", to: "sessions#create"
+  match "/auth/failure",            to: "sessions#failure" 
+  match "/signout",                 to: "sessions#destroy", :as => :signout
   match "/events"                 => "pages#events"
   match "/about_us"               => "pages#about_us"
   match "/contact_us"             => "pages#contact_us"
-  match "/lincoln_hack"             => "pages#lincoln_hack"
-  get :download, :controller => "pages"
+  match "/lincoln_hack"           => "pages#lincoln_hack"
   
   resources :categories
   resources :members

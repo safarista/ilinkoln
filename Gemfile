@@ -1,18 +1,15 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.8'
+gem 'rails', '3.0.11'
 gem 'sqlite3'
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-	
 # Use unicorn as the web server
-gem 'unicorn'
-	
+	# gem 'unicorn'
 end
 
 gem 'json_pure'
+gem 'multi_json'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -28,7 +25,7 @@ gem 'nokogiri'
 # gem 'formtastic', '~> 1.1.0'
 gem 'kramdown'
 #gem 'devise'
-gem 'omniauth'
+gem 'omniauth-twitter'
 
 
 # Bundle gems for the local environment. Make sure to

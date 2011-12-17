@@ -258,13 +258,13 @@ pre, code{
 .float_ctr{text-align:center;}
 pre{
 	background-color: #F8F8FF !important;
-	    border: 1px solid #DEDEDE !important;
-	    color: #444444 !important;
-	    font-size: 12px !important;
-	    line-height: 1.5em !important;
-	    margin: 1em 0 !important;
-	    overflow: auto !important;
-	    padding: 0.5em !important;
+	border: 1px solid #DEDEDE !important;
+	color: #444444 !important;
+	font-size: 12px !important;
+	line-height: 1.5em !important;
+	margin: 1em 0 !important;
+	overflow: auto !important;
+	padding: 0.5em !important;
 }
 
 blockquote {
@@ -283,20 +283,20 @@ input, textarea {
 	border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px;
-    background: none repeat scroll 0 0 #F5F5F5;
-    border: 1px solid #CCCCCC;
+	background: none repeat scroll 0 0 #F5F5F5;
+	border: 1px solid #CCCCCC;
 	margin-bottom: 10px;
-    font-size: 14px;
-    padding: 7px;
-    width: 300px;
-    color: #999;
+	font-size: 14px;
+	padding: 7px;
+	width: 300px;
+	color: #999;
 }
 
 textarea{ width: 90%; }
 
 input:hover, textarea:hover {
-    background: none repeat scroll 0 0 #FFFFFF;
-    border: 1px solid #CED771;
+	background: none repeat scroll 0 0 #FFFFFF;
+	border: 1px solid #CED771;
 }
 
 input:focus, textarea:focus {
@@ -386,12 +386,12 @@ article h2 {
 }
 
 .sponsored_article{-moz-border-radius: 4px 4px 4px 4px;
-    background-color: #FBF9EE;
-    border: 1px solid #FCEFA1;
-    clear: both;
-    color: #363636;
-    margin: 10px;
-    padding: 10px;}
+	background-color: #FBF9EE;
+	border: 1px solid #FCEFA1;
+	clear: both;
+	color: #363636;
+	margin: 10px;
+	padding: 10px;}
 
 .speech-bubl {
 	position: relative;
@@ -426,18 +426,18 @@ a.speech-bubl {
 }
 
 aside{
-    -moz-border-radius: 6px;
+	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
-    background-color: #FFFFFF;
-    color: #666666;
-    display: block;
-    float: left;
-    font-size: 12px;
-    line-height: 1.4em;
-    margin-top: 20px;
-    padding: 10px;
-    width: 240px;
+	background-color: #FFFFFF;
+	color: #666666;
+	display: block;
+	float: left;
+	font-size: 12px;
+	line-height: 1.4em;
+	margin-top: 20px;
+	padding: 10px;
+	width: 240px;
 }
 
 aside ul, aside li{
@@ -519,6 +519,9 @@ footer p{text-align: center;}
 #main ul li{border-bottom:1px solid #ccc;padding:10px 0;}
 #main .article ul li{list-style-type:circle;margin-left:20px;border-bottom:none;}
 #main article li{border-bottom:none;padding:3px 0;}
+#flash_alert {margin-top:10px;font-weight:bold;color:#FFF;text-align:center;padding:5px 10px;background:#fbd503;border:2px solid #fbac03;}
+#flash_notice{margin-top:10px;font-weight:bold;color:#FFF;text-align:center;padding:5px 10px;background:#12cc35;border:2px solid #03961f;}
+#flash_error {margin-top:10px;font-weight:bold;color:#FFF;text-align:center;padding:5px 10px;background:#E34C25;border:2px solid #c9350e;}
 
 /*LINCOLN HACK*/
 #hack_event{background-color:#e34c25;font-family: 'Arvo', arial, serif;text-align:center;padding:10px;border-radius:8px;-moz-border-radius:8px;-webkit-border-radius:8px;margin:10px 0;}

@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  #before_filter :authorize, :except => [:index, :show]
+  before_filter :authorize, :except => [:index, :show]
   respond_to :html, :xml, :json
   
   # GET /categories
