@@ -1,0 +1,9 @@
+Design & Development & Maintainer 
+	names: Nelson Kelem
+	twitter: @ilinkoln
+	email: nelson@ilinkoln.org
+	location: Lincoln, UK
+	
+Technologies
+	Frameworks: Ruby on Rails, HTML5 Boilerplate
+	Languages: Ruby, HTML, CSS3, JavaScript
