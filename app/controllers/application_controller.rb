@@ -1,8 +1,7 @@
+require 'open-uri'
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  
-  helper_method :current_member, :signed_in?, :admin?, :owner?, :authorize
-  
+   
   protected
   def current_member
     @current_member ||= Member.find(session[:member_id]) if session[:member_id]
@@ -32,5 +31,5 @@ class ApplicationController < ActionController::Base
       false
     end
   end
-
+ helper_method :current_member, :signed_in?, :admin?, :owner?, :authorize
 end

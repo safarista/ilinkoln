@@ -1,4 +1,5 @@
 class MembersController < ApplicationController
+  # before_filter :authorize, :except => [:index, :show]
   before_filter :can_modify, :only => [:edit, :update, :destroy] 
   respond_to :html, :xml, :json 
   # GET /members
