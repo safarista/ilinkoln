@@ -1,18 +1,21 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.19'
-gem 'pg'
-gem 'thin'
+
+group :production do
+  gem 'pg'
+  gem 'unicorn'
+end
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
 	gem 'sqlite3'
  	# Use unicorn as the web server
- 	# gem 'unicorn'
+  gem 'thin'
 end
 
-gem 'json_pure'
+gem 'json'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -26,8 +29,8 @@ gem 'nokogiri'
 # gem 'sqlite3-ruby', '1.3.2', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 # gem 'formtastic', '~> 1.1.0'
-gem 'redcarpet'
-gem 'awesome_print'
+gem 'kramdown'
+# gem 'awesome_print'
 #gem 'devise'
 gem 'omniauth-twitter'
 

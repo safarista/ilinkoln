@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 module ApplicationHelper
   
   
@@ -14,7 +12,7 @@ module ApplicationHelper
   end
   
 def kramdown(text)
-    return sanitize Kramdown::Document.new(text).to_html #, :tags => ['a', 'strong', 'p', 'embed', 'object', 'param', 'div', 'span', 'ul', 'li', 'ol', 'img', 'iframe', 'figure', 'figcaption', 'cite', 'pre', 'blockquote', 'video', 'audio', 'mark', 'em', 'sup', 'sub', 'small', 'h2', 'h3', 'h4', 'strong']
+    return sanitize Kramdown::Document.new(text).to_html, :tags => ['a', 'strong', 'p', 'embed', 'object', 'param', 'div', 'span', 'ul', 'li', 'ol', 'img', 'iframe', 'figure', 'figcaption', 'cite', 'pre', 'blockquote', 'video', 'audio', 'mark', 'em', 'sup', 'sub', 'small', 'h2', 'h3', 'h4', 'strong']
 
     # options ||= [:hard_wrap => true, :filter_html => true, :autolink => true, :no_intraemphasis => true, :fenced_code => true, :gh_blockcode => true]
     # kramdown = Redcarpt::Markdown.new(Redcarpet::Render::HTML, *options)

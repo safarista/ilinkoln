@@ -43,7 +43,7 @@
 			</div><!-- end .comment -->
 			
 			<div class="commentor">
-				<%= link_to "#{comment.commenter}", "#{comment.website}/", :target => "_blank" %>
+				<%= link_to "#{truncate comment.commenter}", "http://www.safarista.com/blog", :target => "_blank", :rel => "nofollow" %>
 				<p><small><%= comment.created_at.to_date %></small></p>
 			</div>
 		</li>

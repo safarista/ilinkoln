@@ -1,6 +1,7 @@
 <h2>Upcoming Events</h2>
 
 <ul id="events">
+<% if !@events.blank? %>
 		<% for eventi in @events %>
 	    	<li itemscope itemtype="http://data-vocabulary.org/Event">
 				<h2 itemprop="summary"><%= eventi["name"]%></h2>
@@ -10,20 +11,26 @@
 				<strong>End: </strong><time itemprop="dtend" datetime=""> 22.00hrs</time><br>
 				<strong>Venue: </strong><span><%= eventi["venue_name"]%></span><br>
 				<strong>Location: </strong><span itemprop="address" itemscope itemtype="http://data-vocabulary/Address">
-												<span itemprop="street-address"><%= eventi["venue_address1"]%>,</span> 
-												<span itemprop="locality"><%= eventi["venue_city"]%>,</span>
-												<span itemprop="region">Lincolnshire,</span>
-												<span itemprop="postal-code"><%= eventi["venue_address2"]%> </span>
-												<span itemprop="country-name">UK</span>
-												<span itemprop="geo" itemscope itemtype="http://data-vocabulary.org/Geo">
-													<meta itemprop="latitude" content="<%= eventi["lat"]%>" >
-													<meta itemprop="longitude" content="<%= eventi["lon"]%>" >
-												</span>
-											</span>
-											<br>
-				<strong>Details: </strong><div itemprop="description"><%=raw eventi["description"] %></div>
+					<span itemprop="street-address"><%= eventi["venue_address1"]%>,</span> 
+					<span itemprop="locality"><%= eventi["venue_city"]%>,</span>
+					<span itemprop="region">Lincolnshire,</span>
+					<span itemprop="postal-code"><%= eventi["venue_address2"]%> </span>
+					<span itemprop="country-name">UK</span>
+					<span itemprop="geo" itemscope itemtype="http://data-vocabulary.org/Geo">
+						<meta itemprop="latitude" content="<%= eventi["lat"]%>" >
+						<meta itemprop="longitude" content="<%= eventi["lon"]%>" >
+					</span>
+				</span>
+				<br>
+				<div itemprop="description">
+					<p><strong>Details: </strong></p>
+					<%=raw eventi["description"] %>
+				</div>
 			</li>
 		<% end %>
+<% else %>
+	<li><p>There are no upcoming events. :(</p>
+<% end %>
 </ul>
 
 
