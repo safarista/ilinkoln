@@ -6,11 +6,11 @@ class Member < ActiveRecord::Base
     create! do |member|
       member.provider     = auth["provider"]
       member.uid          = auth["uid"]
-      member.name         = auth["user_info"]["name"]
-      member.location     = auth["user_info"]["location"]
-      member.twitter      = auth["user_info"]["nickname"]
-      member.description  = auth["user_info"]["description"]
-      member.avatar       = auth["user_info"]["image"]
+      member.name         = auth["info"]["name"]
+      member.location     = auth["info"]["location"]
+      member.twitter      = auth["info"]["nickname"]
+      member.description  = auth["info"]["description"]
+      member.avatar       = auth["info"]["image"]
     end
   end
   

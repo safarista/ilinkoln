@@ -45,7 +45,7 @@
   <div id="container">
     <header>
 		<h1 id="logo"><%= link_to raw("<em>i</em>LINKOLN"), root_url %></h1>
-		<p class="float_ctr"><%= link_to image_tag("register_now_free.png", :alt => "Registration is free" ), "//www.meetup.com/iLinkoln/events/17555476/", :title => "Register now for free", :target => "_blank" %></p>
+		
     </header>
 		<% flash.each do |name, msg| %>
 			<%= content_tag :div, msg, :id => "flash_#{name}" %>
@@ -64,13 +64,13 @@
 				<dd style="font-size:2.7em; margin-top:1em; margin-bottom:1em;">
 					<%= link_to event, "/events", :style => "color:#127CC4;" if event %>
 				</dd>
-				<dd>At "The Enterprise Lincoln" conference room.</dd>
+				<dd>At "Tower Bar" (The Hub) room.</dd>
 				<dd>
 					<a href="http://meetup.com/ilinkoln" title="Folow the link to our caledar" target="_blank">
 					Have a look at the Calendar for more &rarr;
 					</a>
-				</dd>
-				<dd>
+				</dd> 
+				<!-- <dd>
 					<div id="hack_event">
 						<h3>Lincoln Hack</h3>
 						<span><a href="//www.meetup.com/iLinkoln/events/17555476/">REGISTER NOW FREE</a></span>
@@ -83,7 +83,7 @@
 							<a href="//safarista.com/lincolnhacksponsorshipdoc.pdf">Sponsorship Info</a>
 						</span>
 					</div>
-				</dd>
+				</dd> -->
 
 		</dl>
 		
@@ -180,18 +180,7 @@
 				<dd>
 					<%= link_to image_tag("uon.png", :alt => "University of Lincoln"), "http://lincoln.ac.uk/", :title => "The university of Lincoln", :target => "_blank"  %>
 				</dd>
-				<dd>
-					<%= link_to image_tag("ribanner.png", :alt => "RubyInside"), "http://rubyinside.com/", :title => "RubyInside a Ruby and Ruby on Rails expert", :target => "_blank"  %>
-				</dd>
-				<dd>
-					<%= link_to image_tag("zaddlem.png", :alt => "Zaddle Marketing"), "http://zaddleinternetmarketing.com/", :title => "Zaddlemarketing Google Adwords expert", :target => "_blank"  %>
-				</dd>
-				<dd>
-					<%= link_to image_tag("epixmedia.png", :alt => "Epix media"), "http://epixmedia.co.uk/", :title => "Epix media, video production, web design development", :target => "_blank"  %>
-				</dd>
-				<dd>
-					<%= link_to image_tag("energycell.jpg", :alt => "The energy cell"), "http://energycell.co.uk/", :title => "Website design and marketing agency", :target => "_blank"  %>
-				</dd>
+				
 		</dl>
 
 		

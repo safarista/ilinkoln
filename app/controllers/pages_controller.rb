@@ -1,3 +1,4 @@
+
 class PagesController < ApplicationController
   # caches_page :events
   
@@ -18,15 +19,15 @@ class PagesController < ApplicationController
     end
   end
   
-  def download
-    send_data("#{RAILS_ROOT}/images/LincolnHack1SponsorDocument.pdf", :disposition => "attachment")
-  end
+  # def download
+  #   send_data("#{RAILS_ROOT}/images/LincolnHack1SponsorDocument.pdf", :disposition => "attachment")
+  # end
   
   def events
     url = "https://api.meetup.com/events?key=60451a4524d6d1b1f3af3551b4111&sign=true&status=upcoming&group_urlname=ilinkoln"
-    events = JSON.load(open(url).read)
+    events = JSON.parse(open(url).read)
     @events = events["results"]
-    @title = @events.first["name"]
+    @title = @events.first["name"] if @events
     
     # 
     # "rsvpcount" => "1",

@@ -15,9 +15,9 @@
 			<br>
 			<strong>Website: </strong><span itemprop="url"><%= member.website %></span>
 			<br>	
-			<strong>What I do: </strong><div itemprop="description"><%= kramdown truncate(member.description, :length => 500, :omission => "[...]")%></div>
+			<strong>What I do: </strong><div itemprop="description"><%= simple_format truncate(member.description, :length => 500, :omission => "[...]")%></div>
 			<br>	
-			<div><strong>What I think about iLinkoln: </strong><%= kramdown member.aboutus %></div>
+			<div><strong>What I think about iLinkoln: </strong><%= simple_format member.aboutus %></div>
 		</div>
 		<figure  class="member_img float_lt">
 			<%= link_to (image_tag(member.avatar, :size => "140x140")), member,  :itemprop =>"photo" %>

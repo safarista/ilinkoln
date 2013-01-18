@@ -1,15 +1,15 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.8'
-gem 'sqlite3'
+gem 'rails', '3.0.19'
+gem 'pg'
+gem 'thin'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-	
-# Use unicorn as the web server
-gem 'unicorn'
-	
+	gem 'sqlite3'
+ 	# Use unicorn as the web server
+ 	# gem 'unicorn'
 end
 
 gem 'json_pure'
@@ -26,9 +26,10 @@ gem 'nokogiri'
 # gem 'sqlite3-ruby', '1.3.2', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 # gem 'formtastic', '~> 1.1.0'
-gem 'kramdown'
+gem 'redcarpet'
+gem 'awesome_print'
 #gem 'devise'
-gem 'omniauth'
+gem 'omniauth-twitter'
 
 
 # Bundle gems for the local environment. Make sure to
