@@ -61,8 +61,8 @@
 	<aside id="sidebar">
 		<dl id="new-events">
 			<dt>The Next Meetup or Event is on:</dt>
-				<dd style="font-size:2.7em; margin-top:1em; margin-bottom:1em;">
-					<%= link_to event, "/events", :style => "color:#127CC4;" if event %>
+				<dd style="font-size:2em; margin-top:1em; margin-bottom:1em;">
+					<%= link_to Time.at(@evento).strftime("%a %b %y - %H:%M"), "/events", :style => "color:#127CC4;" if meetup_day %>
 				</dd>
 				<dd>At "Tower Bar" (The Hub) room.</dd>
 				<dd>

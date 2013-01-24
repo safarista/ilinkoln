@@ -17,13 +17,13 @@ def kramdown(text)
     # options ||= [:hard_wrap => true, :filter_html => true, :autolink => true, :no_intraemphasis => true, :fenced_code => true, :gh_blockcode => true]
     # kramdown = Redcarpt::Markdown.new(Redcarpet::Render::HTML, *options)
     # kramdown.render(text)
-  end
+end
   
-  def event
-    url = "https://api.meetup.com/events?key=60451a4524d6d1b1f3af3551b4111&sign=true&status=upcoming&group_urlname=ilinkoln"
+  def meetup_day
+    url = "https://api.meetup.com/2/events?key=60451a4524d6d1b1f3af3551b4111&sign=true&status=upcoming&group_id=1676068&group_urlname=ilinkoln&page=2"
     events = JSON.load(open(url).read)
-    @events = events["results"]
-    @events.first["time"].to_date() if @events
+    eventi = events["results"]
+    @evento = eventi.first["time"]
     
   end
   

@@ -20,12 +20,13 @@ class PagesController < ApplicationController
   end
   
   def events
-    url = "https://api.meetup.com/events?key=60451a4524d6d1b1f3af3551b4111&sign=true&status=upcoming&group_urlname=ilinkoln"
+    url = "https://api.meetup.com/2/events?key=60451a4524d6d1b1f3af3551b4111&sign=true&status=upcoming&group_id=1676068&group_urlname=ilinkoln&page=2"
     events = JSON.parse(open(url).read)
     @events = events["results"]
-    @title = @events.first["name"] if @events
-    
-    # 
+    @title = @events.first["name"]
+
+    # http://api.meetup.com/2/events?group_id=1676068&_=1359037080400&status=upcoming&order=time&group_urlname=ilinkoln&desc=false&offset=0&format=json&page=2&fields=&sig_id=11102847&sig=de3dbfcec315e691ae6f34a716f0ac8633bc040a
+    #     url = "https://api.meetup.com/events?key=60451a4524d6d1b1f3af3551b4111&sign=true&status=upcoming&group_urlname=ilinkoln"
     # "rsvpcount" => "1",
     #             "venue_name" => "The Hub",
     #       "payment_required" => "0",
